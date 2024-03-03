@@ -1,0 +1,9 @@
+*.tlog
+*.iobj
+*.obj
+*.pdb
+*.ipch
+*.vcxproj.user
+.vs/
+.vscode/
+build/
