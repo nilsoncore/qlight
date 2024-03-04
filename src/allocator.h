@@ -3,8 +3,13 @@
 
 #include "types.h"
 
+#if defined(_WIN32)
 #define __ALLOCATOR_CALLER CallerInfo { "(none)", __FUNCSIG__, __FILE__, __LINE__ }
 #define __ALLOCATOR_TYPE_CALLER(T) CallerInfo { "'" #T "'", __FUNCSIG__, __FILE__, __LINE__ }
+#else
+#define __ALLOCATOR_CALLER CallerInfo { "(none)", __PRETTY_FUNCTION__, __FILE__, __LINE__ }
+#define __ALLOCATOR_TYPE_CALLER(T) CallerInfo { "'" #T "'", __PRETTY_FUNCTION__, __FILE__, __LINE__ }
+#endif
 
 #define ALLOC(allocator, count, T) (T *)allocator->request_allocate(count, sizeof(T), __ALLOCATOR_TYPE_CALLER(T))
 #define REALLOC(allocator, memory_pointer, old_count, new_count, T) (T *)allocator->request_reallocate(memory_pointer, old_count, new_count, sizeof(T), __ALLOCATOR_TYPE_CALLER(T))

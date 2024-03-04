@@ -126,73 +126,73 @@ Vector2_s8 & Vector2_s8::operator %= (s8 rhs) {
 }
 
 Vector2_s8 Vector2_s8::operator + (Vector2_s8 rhs) {
-	return Vector2_s8(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x + rhs.x),
+		static_cast<s8>(this->y + rhs.y)
+	};
 }
 
 Vector2_s8 Vector2_s8::operator - (Vector2_s8 rhs) {
-	return Vector2_s8(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x - rhs.x),
+		static_cast<s8>(this->y - rhs.y)
+	};
 }
 
 Vector2_s8 Vector2_s8::operator * (Vector2_s8 rhs) {
-	return Vector2_s8(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x * rhs.x),
+		static_cast<s8>(this->y * rhs.y)
+	};
 }
  
 Vector2_s8 Vector2_s8::operator / (Vector2_s8 rhs) {
-	return Vector2_s8(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x / rhs.x),
+		static_cast<s8>(this->y / rhs.y)
+	};
 }
 
 Vector2_s8 Vector2_s8::operator % (Vector2_s8 rhs) {
-	return Vector2_s8(
-		this->x % rhs.x,
-		this->y % rhs.y
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x % rhs.x),
+		static_cast<s8>(this->y % rhs.y)
+	};
 }
 
 Vector2_s8 Vector2_s8::operator + (s8 rhs)  {
-	return Vector2_s8(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x + rhs),
+		static_cast<s8>(this->y + rhs)
+	};
 }
 
 Vector2_s8 Vector2_s8::operator - (s8 rhs) {
-	return Vector2_s8(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x - rhs),
+		static_cast<s8>(this->y - rhs)
+	};
 }
 
 Vector2_s8 Vector2_s8::operator * (s8 rhs) {
-	return Vector2_s8(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x * rhs),
+		static_cast<s8>(this->y * rhs)
+	};
 }
 
 Vector2_s8 Vector2_s8::operator / (s8 rhs) {
-	return Vector2_s8(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x / rhs),
+		static_cast<s8>(this->y / rhs)
+	};
 }
 
 Vector2_s8 Vector2_s8::operator % (s8 rhs) {
-	return Vector2_s8(
-		this->x % rhs,
-		this->y % rhs
-	);
+	return Vector2_s8 {
+		static_cast<s8>(this->x % rhs),
+		static_cast<s8>(this->y % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -279,73 +279,73 @@ Vector2_u8 & Vector2_u8::operator %= (u8 rhs) {
 }
 
 Vector2_u8 Vector2_u8::operator + (Vector2_u8 rhs) {
-	return Vector2_u8(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x + rhs.x),
+		static_cast<u8>(this->y + rhs.y)
+	};
 }
 
 Vector2_u8 Vector2_u8::operator - (Vector2_u8 rhs) {
-	return Vector2_u8(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x - rhs.x),
+		static_cast<u8>(this->y - rhs.y)
+	};
 }
 
 Vector2_u8 Vector2_u8::operator * (Vector2_u8 rhs) {
-	return Vector2_u8(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x * rhs.x),
+		static_cast<u8>(this->y * rhs.y)
+	};
 }
  
 Vector2_u8 Vector2_u8::operator / (Vector2_u8 rhs) {
-	return Vector2_u8(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x / rhs.x),
+		static_cast<u8>(this->y / rhs.y)
+	};
 }
 
 Vector2_u8 Vector2_u8::operator % (Vector2_u8 rhs) {
-	return Vector2_u8(
-		this->x % rhs.x,
-		this->y % rhs.y
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x % rhs.x),
+		static_cast<u8>(this->y % rhs.y)
+	};
 }
 
 Vector2_u8 Vector2_u8::operator + (u8 rhs)  {
-	return Vector2_u8(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x + rhs),
+		static_cast<u8>(this->y + rhs)
+	};
 }
 
 Vector2_u8 Vector2_u8::operator - (u8 rhs) {
-	return Vector2_u8(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x - rhs),
+		static_cast<u8>(this->y - rhs)
+	};
 }
 
 Vector2_u8 Vector2_u8::operator * (u8 rhs) {
-	return Vector2_u8(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x * rhs),
+		static_cast<u8>(this->y * rhs)
+	};
 }
 
 Vector2_u8 Vector2_u8::operator / (u8 rhs) {
-	return Vector2_u8(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x / rhs),
+		static_cast<u8>(this->y / rhs)
+	};
 }
 
 Vector2_u8 Vector2_u8::operator % (u8 rhs) {
-	return Vector2_u8(
-		this->x % rhs,
-		this->y % rhs
-	);
+	return Vector2_u8 {
+		static_cast<u8>(this->x % rhs),
+		static_cast<u8>(this->y % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -432,73 +432,73 @@ Vector2_s16 & Vector2_s16::operator %= (s16 rhs) {
 }
 
 Vector2_s16 Vector2_s16::operator + (Vector2_s16 rhs) {
-	return Vector2_s16(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x + rhs.x),
+		static_cast<s16>(this->y + rhs.y)
+	};
 }
 
 Vector2_s16 Vector2_s16::operator - (Vector2_s16 rhs) {
-	return Vector2_s16(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x - rhs.x),
+		static_cast<s16>(this->y - rhs.y)
+	};
 }
 
 Vector2_s16 Vector2_s16::operator * (Vector2_s16 rhs) {
-	return Vector2_s16(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x * rhs.x),
+		static_cast<s16>(this->y * rhs.y)
+	};
 }
 
 Vector2_s16 Vector2_s16::operator / (Vector2_s16 rhs) {
-	return Vector2_s16(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x / rhs.x),
+		static_cast<s16>(this->y / rhs.y)
+	};
 }
 
 Vector2_s16 Vector2_s16::operator % (Vector2_s16 rhs) {
-	return Vector2_s16(
-		this->x % rhs.x,
-		this->y % rhs.y
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x % rhs.x),
+		static_cast<s16>(this->y % rhs.y)
+	};
 }
 
 Vector2_s16 Vector2_s16::operator + (s16 rhs)  {
-	return Vector2_s16(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x + rhs),
+		static_cast<s16>(this->y + rhs)
+	};
 }
 
 Vector2_s16 Vector2_s16::operator - (s16 rhs) {
-	return Vector2_s16(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x - rhs),
+		static_cast<s16>(this->y - rhs)
+	};
 }
 
 Vector2_s16 Vector2_s16::operator * (s16 rhs) {
-	return Vector2_s16(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x * rhs),
+		static_cast<s16>(this->y * rhs)
+	};
 }
 
 Vector2_s16 Vector2_s16::operator / (s16 rhs) {
-	return Vector2_s16(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x / rhs),
+		static_cast<s16>(this->y / rhs)
+	};
 }
 
 Vector2_s16 Vector2_s16::operator % (s16 rhs) {
-	return Vector2_s16(
-		this->x % rhs,
-		this->y % rhs
-	);
+	return Vector2_s16 {
+		static_cast<s16>(this->x % rhs),
+		static_cast<s16>(this->y % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -585,73 +585,73 @@ Vector2_u16 & Vector2_u16::operator %= (u16 rhs) {
 }
 
 Vector2_u16 Vector2_u16::operator + (Vector2_u16 rhs) {
-	return Vector2_u16(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x + rhs.x),
+		static_cast<u16>(this->y + rhs.y)
+	};
 }
 
 Vector2_u16 Vector2_u16::operator - (Vector2_u16 rhs) {
-	return Vector2_u16(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x - rhs.x),
+		static_cast<u16>(this->y - rhs.y)
+	};
 }
 
 Vector2_u16 Vector2_u16::operator * (Vector2_u16 rhs) {
-	return Vector2_u16(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x * rhs.x),
+		static_cast<u16>(this->y * rhs.y)
+	};
 }
 
 Vector2_u16 Vector2_u16::operator / (Vector2_u16 rhs) {
-	return Vector2_u16(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x / rhs.x),
+		static_cast<u16>(this->y / rhs.y)
+	};
 }
 
 Vector2_u16 Vector2_u16::operator % (Vector2_u16 rhs) {
-	return Vector2_u16(
-		this->x % rhs.x,
-		this->y % rhs.y
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x % rhs.x),
+		static_cast<u16>(this->y % rhs.y)
+	};
 }
 
 Vector2_u16 Vector2_u16::operator + (u16 rhs)  {
-	return Vector2_u16(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x + rhs),
+		static_cast<u16>(this->y + rhs)
+	};
 }
 
 Vector2_u16 Vector2_u16::operator - (u16 rhs) {
-	return Vector2_u16(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x - rhs),
+		static_cast<u16>(this->y - rhs)
+	};
 }
 
 Vector2_u16 Vector2_u16::operator * (u16 rhs) {
-	return Vector2_u16(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x * rhs),
+		static_cast<u16>(this->y * rhs)
+	};
 }
 
 Vector2_u16 Vector2_u16::operator / (u16 rhs) {
-	return Vector2_u16(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x / rhs),
+		static_cast<u16>(this->y / rhs)
+	};
 }
 
 Vector2_u16 Vector2_u16::operator % (u16 rhs) {
-	return Vector2_u16(
-		this->x % rhs,
-		this->y % rhs
-	);
+	return Vector2_u16 {
+		static_cast<u16>(this->x % rhs),
+		static_cast<u16>(this->y % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -660,12 +660,12 @@ Vector2_u16 Vector2_u16::operator % (u16 rhs) {
 
 bool Vector2_s32::operator == (Vector2_s32 rhs) {
 	return this->x == rhs.x &&
-		this->y == rhs.y;
+	       this->y == rhs.y;
 }
 
 bool Vector2_s32::operator == (s32 rhs) {
 	return this->x == rhs &&
-		this->y == rhs;
+	       this->y == rhs;
 }
 
 s32 & Vector2_s32::operator [] (int index) {
@@ -738,73 +738,73 @@ Vector2_s32 & Vector2_s32::operator %= (s32 rhs) {
 }
 
 Vector2_s32 Vector2_s32::operator + (Vector2_s32 rhs) {
-	return Vector2_s32(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x + rhs.x),
+		static_cast<s32>(this->y + rhs.y)
+	};
 }
 
 Vector2_s32 Vector2_s32::operator - (Vector2_s32 rhs) {
-	return Vector2_s32(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x - rhs.x),
+		static_cast<s32>(this->y - rhs.y)
+	};
 }
 
 Vector2_s32 Vector2_s32::operator * (Vector2_s32 rhs) {
-	return Vector2_s32(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x * rhs.x),
+		static_cast<s32>(this->y * rhs.y)
+	};
 }
 
 Vector2_s32 Vector2_s32::operator / (Vector2_s32 rhs) {
-	return Vector2_s32(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x / rhs.x),
+		static_cast<s32>(this->y / rhs.y)
+	};
 }
 
 Vector2_s32 Vector2_s32::operator % (Vector2_s32 rhs) {
-	return Vector2_s32(
-		this->x % rhs.x,
-		this->y % rhs.y
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x % rhs.x),
+		static_cast<s32>(this->y % rhs.y)
+	};
 }
 
 Vector2_s32 Vector2_s32::operator + (s32 rhs)  {
-	return Vector2_s32(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x + rhs),
+		static_cast<s32>(this->y + rhs)
+	};
 }
 
 Vector2_s32 Vector2_s32::operator - (s32 rhs) {
-	return Vector2_s32(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x - rhs),
+		static_cast<s32>(this->y - rhs)
+	};
 }
 
 Vector2_s32 Vector2_s32::operator * (s32 rhs) {
-	return Vector2_s32(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x * rhs),
+		static_cast<s32>(this->y * rhs)
+	};
 }
 
 Vector2_s32 Vector2_s32::operator / (s32 rhs) {
-	return Vector2_s32(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x / rhs),
+		static_cast<s32>(this->y / rhs)
+	};
 }
 
 Vector2_s32 Vector2_s32::operator % (s32 rhs) {
-	return Vector2_s32(
-		this->x % rhs,
-		this->y % rhs
-	);
+	return Vector2_s32 {
+		static_cast<s32>(this->x % rhs),
+		static_cast<s32>(this->y % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -813,12 +813,12 @@ Vector2_s32 Vector2_s32::operator % (s32 rhs) {
 
 bool Vector2_u32::operator == (Vector2_u32 rhs) {
 	return this->x == rhs.x &&
-		this->y == rhs.y;
+	       this->y == rhs.y;
 }
 
 bool Vector2_u32::operator == (u32 rhs) {
 	return this->x == rhs &&
-		this->y == rhs;
+	       this->y == rhs;
 }
 
 u32 & Vector2_u32::operator [] (int index) {
@@ -891,73 +891,73 @@ Vector2_u32 & Vector2_u32::operator %= (u32 rhs) {
 }
 
 Vector2_u32 Vector2_u32::operator + (Vector2_u32 rhs) {
-	return Vector2_u32(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x + rhs.x),
+		static_cast<u32>(this->y + rhs.y)
+	};
 }
 
 Vector2_u32 Vector2_u32::operator - (Vector2_u32 rhs) {
-	return Vector2_u32(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x - rhs.x),
+		static_cast<u32>(this->y - rhs.y)
+	};
 }
 
 Vector2_u32 Vector2_u32::operator * (Vector2_u32 rhs) {
-	return Vector2_u32(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x * rhs.x),
+		static_cast<u32>(this->y * rhs.y)
+	};
 }
 
 Vector2_u32 Vector2_u32::operator / (Vector2_u32 rhs) {
-	return Vector2_u32(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x / rhs.x),
+		static_cast<u32>(this->y / rhs.y)
+	};
 }
 
 Vector2_u32 Vector2_u32::operator % (Vector2_u32 rhs) {
-	return Vector2_u32(
-		this->x % rhs.x,
-		this->y % rhs.y
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x % rhs.x),
+		static_cast<u32>(this->y % rhs.y)
+	};
 }
 
 Vector2_u32 Vector2_u32::operator + (u32 rhs)  {
-	return Vector2_u32(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x + rhs),
+		static_cast<u32>(this->y + rhs)
+	};
 }
 
 Vector2_u32 Vector2_u32::operator - (u32 rhs) {
-	return Vector2_u32(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x - rhs),
+		static_cast<u32>(this->y - rhs)
+	};
 }
 
 Vector2_u32 Vector2_u32::operator * (u32 rhs) {
-	return Vector2_u32(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x * rhs),
+		static_cast<u32>(this->y * rhs)
+	};
 }
 
 Vector2_u32 Vector2_u32::operator / (u32 rhs) {
-	return Vector2_u32(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x / rhs),
+		static_cast<u32>(this->y / rhs)
+	};
 }
 
 Vector2_u32 Vector2_u32::operator % (u32 rhs) {
-	return Vector2_u32(
-		this->x % rhs,
-		this->y % rhs
-	);
+	return Vector2_u32 {
+		static_cast<u32>(this->x % rhs),
+		static_cast<u32>(this->y % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -1044,73 +1044,73 @@ Vector2_s64 & Vector2_s64::operator %= (s64 rhs) {
 }
 
 Vector2_s64 Vector2_s64::operator + (Vector2_s64 rhs) {
-	return Vector2_s64(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x + rhs.x),
+		static_cast<s64>(this->y + rhs.y)
+	};
 }
 
 Vector2_s64 Vector2_s64::operator - (Vector2_s64 rhs) {
-	return Vector2_s64(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x - rhs.x),
+		static_cast<s64>(this->y - rhs.y)
+	};
 }
 
 Vector2_s64 Vector2_s64::operator * (Vector2_s64 rhs) {
-	return Vector2_s64(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x * rhs.x),
+		static_cast<s64>(this->y * rhs.y)
+	};
 }
 
 Vector2_s64 Vector2_s64::operator / (Vector2_s64 rhs) {
-	return Vector2_s64(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x / rhs.x),
+		static_cast<s64>(this->y / rhs.y)
+	};
 }
 
 Vector2_s64 Vector2_s64::operator % (Vector2_s64 rhs) {
-	return Vector2_s64(
-		this->x % rhs.x,
-		this->y % rhs.y
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x % rhs.x),
+		static_cast<s64>(this->y % rhs.y)
+	};
 }
 
 Vector2_s64 Vector2_s64::operator + (s64 rhs)  {
-	return Vector2_s64(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x + rhs),
+		static_cast<s64>(this->y + rhs)
+	};
 }
 
 Vector2_s64 Vector2_s64::operator - (s64 rhs) {
-	return Vector2_s64(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x - rhs),
+		static_cast<s64>(this->y - rhs)
+	};
 }
 
 Vector2_s64 Vector2_s64::operator * (s64 rhs) {
-	return Vector2_s64(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x * rhs),
+		static_cast<s64>(this->y * rhs)
+	};
 }
 
 Vector2_s64 Vector2_s64::operator / (s64 rhs) {
-	return Vector2_s64(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x / rhs),
+		static_cast<s64>(this->y / rhs)
+	};
 }
 
 Vector2_s64 Vector2_s64::operator % (s64 rhs) {
-	return Vector2_s64(
-		this->x % rhs,
-		this->y % rhs
-	);
+	return Vector2_s64 {
+		static_cast<s64>(this->x % rhs),
+		static_cast<s64>(this->y % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -1197,73 +1197,73 @@ Vector2_u64 & Vector2_u64::operator %= (u64 rhs) {
 }
 
 Vector2_u64 Vector2_u64::operator + (Vector2_u64 rhs) {
-	return Vector2_u64(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x + rhs.x),
+		static_cast<u64>(this->y + rhs.y)
+	};
 }
 
 Vector2_u64 Vector2_u64::operator - (Vector2_u64 rhs) {
-	return Vector2_u64(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x - rhs.x),
+		static_cast<u64>(this->y - rhs.y)
+	};
 }
 
 Vector2_u64 Vector2_u64::operator * (Vector2_u64 rhs) {
-	return Vector2_u64(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x * rhs.x),
+		static_cast<u64>(this->y * rhs.y)
+	};
 }
 
 Vector2_u64 Vector2_u64::operator / (Vector2_u64 rhs) {
-	return Vector2_u64(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x / rhs.x),
+		static_cast<u64>(this->y / rhs.y)
+	};
 }
 
 Vector2_u64 Vector2_u64::operator % (Vector2_u64 rhs) {
-	return Vector2_u64(
-		this->x % rhs.x,
-		this->y % rhs.y
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x % rhs.x),
+		static_cast<u64>(this->y % rhs.y)
+	};
 }
 
 Vector2_u64 Vector2_u64::operator + (u64 rhs)  {
-	return Vector2_u64(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x + rhs),
+		static_cast<u64>(this->y + rhs)
+	};
 }
 
 Vector2_u64 Vector2_u64::operator - (u64 rhs) {
-	return Vector2_u64(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x - rhs),
+		static_cast<u64>(this->y - rhs)
+	};
 }
 
 Vector2_u64 Vector2_u64::operator * (u64 rhs) {
-	return Vector2_u64(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x * rhs),
+		static_cast<u64>(this->y * rhs)
+	};
 }
 
 Vector2_u64 Vector2_u64::operator / (u64 rhs) {
-	return Vector2_u64(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x / rhs),
+		static_cast<u64>(this->y / rhs)
+	};
 }
 
 Vector2_u64 Vector2_u64::operator % (u64 rhs) {
-	return Vector2_u64(
-		this->x % rhs,
-		this->y % rhs
-	);
+	return Vector2_u64 {
+		static_cast<u64>(this->x % rhs),
+		static_cast<u64>(this->y % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -1338,59 +1338,59 @@ Vector2_f32 & Vector2_f32::operator /= (f32 rhs) {
 }
 
 Vector2_f32 Vector2_f32::operator + (Vector2_f32 rhs) {
-	return Vector2_f32(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_f32 {
+		static_cast<f32>(this->x + rhs.x),
+		static_cast<f32>(this->y + rhs.y)
+	};
 }
 
 Vector2_f32 Vector2_f32::operator - (Vector2_f32 rhs) {
-	return Vector2_f32(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_f32 {
+		static_cast<f32>(this->x - rhs.x),
+		static_cast<f32>(this->y - rhs.y)
+	};
 }
 
 Vector2_f32 Vector2_f32::operator * (Vector2_f32 rhs) {
-	return Vector2_f32(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_f32 {
+		static_cast<f32>(this->x * rhs.x),
+		static_cast<f32>(this->y * rhs.y)
+	};
 }
 
 Vector2_f32 Vector2_f32::operator / (Vector2_f32 rhs) {
-	return Vector2_f32(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_f32 {
+		static_cast<f32>(this->x / rhs.x),
+		static_cast<f32>(this->y / rhs.y)
+	};
 }
 
 Vector2_f32 Vector2_f32::operator + (f32 rhs)  {
-	return Vector2_f32(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_f32 {
+		static_cast<f32>(this->x + rhs),
+		static_cast<f32>(this->y + rhs)
+	};
 }
 
 Vector2_f32 Vector2_f32::operator - (f32 rhs) {
-	return Vector2_f32(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_f32 {
+		static_cast<f32>(this->x - rhs),
+		static_cast<f32>(this->y - rhs)
+	};
 }
 
 Vector2_f32 Vector2_f32::operator * (f32 rhs) {
-	return Vector2_f32(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_f32 {
+		static_cast<f32>(this->x * rhs),
+		static_cast<f32>(this->y * rhs)
+	};
 }
 
 Vector2_f32 Vector2_f32::operator / (f32 rhs) {
-	return Vector2_f32(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_f32 {
+		static_cast<f32>(this->x / rhs),
+		static_cast<f32>(this->y / rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -1465,59 +1465,59 @@ Vector2_f64 & Vector2_f64::operator /= (f64 rhs) {
 }
 
 Vector2_f64 Vector2_f64::operator + (Vector2_f64 rhs) {
-	return Vector2_f64(
-		this->x + rhs.x,
-		this->y + rhs.y
-	);
+	return Vector2_f64 {
+		static_cast<f64>(this->x + rhs.x),
+		static_cast<f64>(this->y + rhs.y)
+	};
 }
 
 Vector2_f64 Vector2_f64::operator - (Vector2_f64 rhs) {
-	return Vector2_f64(
-		this->x - rhs.x,
-		this->y - rhs.y
-	);
+	return Vector2_f64 {
+		static_cast<f64>(this->x - rhs.x),
+		static_cast<f64>(this->y - rhs.y)
+	};
 }
 
 Vector2_f64 Vector2_f64::operator * (Vector2_f64 rhs) {
-	return Vector2_f64(
-		this->x * rhs.x,
-		this->y * rhs.y
-	);
+	return Vector2_f64 {
+		static_cast<f64>(this->x * rhs.x),
+		static_cast<f64>(this->y * rhs.y)
+	};
 }
 
 Vector2_f64 Vector2_f64::operator / (Vector2_f64 rhs) {
-	return Vector2_f64(
-		this->x / rhs.x,
-		this->y / rhs.y
-	);
+	return Vector2_f64 {
+		static_cast<f64>(this->x / rhs.x),
+		static_cast<f64>(this->y / rhs.y)
+	};
 }
 
 Vector2_f64 Vector2_f64::operator + (f64 rhs)  {
-	return Vector2_f64(
-		this->x + rhs,
-		this->y + rhs
-	);
+	return Vector2_f64 {
+		static_cast<f64>(this->x + rhs),
+		static_cast<f64>(this->y + rhs)
+	};
 }
 
 Vector2_f64 Vector2_f64::operator - (f64 rhs) {
-	return Vector2_f64(
-		this->x - rhs,
-		this->y - rhs
-	);
+	return Vector2_f64 {
+		static_cast<f64>(this->x - rhs),
+		static_cast<f64>(this->y - rhs)
+	};
 }
 
 Vector2_f64 Vector2_f64::operator * (f64 rhs) {
-	return Vector2_f64(
-		this->x * rhs,
-		this->y * rhs
-	);
+	return Vector2_f64 {
+		static_cast<f64>(this->x * rhs),
+		static_cast<f64>(this->y * rhs)
+	};
 }
 
 Vector2_f64 Vector2_f64::operator / (f64 rhs) {
-	return Vector2_f64(
-		this->x / rhs,
-		this->y / rhs
-	);
+	return Vector2_f64 {
+		static_cast<f64>(this->x / rhs),
+		static_cast<f64>(this->y / rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -1617,83 +1617,83 @@ Vector3_s8 & Vector3_s8::operator %= (s8 rhs) {
 }
 
 Vector3_s8 Vector3_s8::operator + (Vector3_s8 rhs) {
-	return Vector3_s8(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x + rhs.x),
+		static_cast<s8>(this->y + rhs.y),
+		static_cast<s8>(this->z + rhs.z)
+	};
 }
 
 Vector3_s8 Vector3_s8::operator - (Vector3_s8 rhs) {
-	return Vector3_s8(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x - rhs.x),
+		static_cast<s8>(this->y - rhs.y),
+		static_cast<s8>(this->z - rhs.z)
+	};
 }
 
 Vector3_s8 Vector3_s8::operator * (Vector3_s8 rhs) {
-	return Vector3_s8(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x * rhs.x),
+		static_cast<s8>(this->y * rhs.y),
+		static_cast<s8>(this->z * rhs.z)
+	};
 }
 
 Vector3_s8 Vector3_s8::operator / (Vector3_s8 rhs) {
-	return Vector3_s8(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x / rhs.x),
+		static_cast<s8>(this->y / rhs.y),
+		static_cast<s8>(this->z / rhs.z)
+	};
 }
 
 Vector3_s8 Vector3_s8::operator % (Vector3_s8 rhs) {
-	return Vector3_s8(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x % rhs.x),
+		static_cast<s8>(this->y % rhs.y),
+		static_cast<s8>(this->z % rhs.z)
+	};
 }
 
 Vector3_s8 Vector3_s8::operator + (s8 rhs)  {
-	return Vector3_s8(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x + rhs),
+		static_cast<s8>(this->y + rhs),
+		static_cast<s8>(this->z + rhs)
+	};
 }
 
 Vector3_s8 Vector3_s8::operator - (s8 rhs) {
-	return Vector3_s8(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x - rhs),
+		static_cast<s8>(this->y - rhs),
+		static_cast<s8>(this->z - rhs)
+	};
 }
 
 Vector3_s8 Vector3_s8::operator * (s8 rhs) {
-	return Vector3_s8(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x * rhs),
+		static_cast<s8>(this->y * rhs),
+		static_cast<s8>(this->z * rhs)
+	};
 }
 
 Vector3_s8 Vector3_s8::operator / (s8 rhs) {
-	return Vector3_s8(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x / rhs),
+		static_cast<s8>(this->y / rhs),
+		static_cast<s8>(this->z / rhs)
+	};
 }
 
 Vector3_s8 Vector3_s8::operator % (s8 rhs) {
-	return Vector3_s8(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs
-	);
+	return Vector3_s8 {
+		static_cast<s8>(this->x % rhs),
+		static_cast<s8>(this->y % rhs),
+		static_cast<s8>(this->z % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -1793,83 +1793,83 @@ Vector3_u8 & Vector3_u8::operator %= (u8 rhs) {
 }
 
 Vector3_u8 Vector3_u8::operator + (Vector3_u8 rhs) {
-	return Vector3_u8(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x + rhs.x),
+		static_cast<u8>(this->y + rhs.y),
+		static_cast<u8>(this->z + rhs.z)
+	};
 }
 
 Vector3_u8 Vector3_u8::operator - (Vector3_u8 rhs) {
-	return Vector3_u8(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x - rhs.x),
+		static_cast<u8>(this->y - rhs.y),
+		static_cast<u8>(this->z - rhs.z)
+	};
 }
 
 Vector3_u8 Vector3_u8::operator * (Vector3_u8 rhs) {
-	return Vector3_u8(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x * rhs.x),
+		static_cast<u8>(this->y * rhs.y),
+		static_cast<u8>(this->z * rhs.z)
+	};
 }
 
 Vector3_u8 Vector3_u8::operator / (Vector3_u8 rhs) {
-	return Vector3_u8(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x / rhs.x),
+		static_cast<u8>(this->y / rhs.y),
+		static_cast<u8>(this->z / rhs.z)
+	};
 }
 
 Vector3_u8 Vector3_u8::operator % (Vector3_u8 rhs) {
-	return Vector3_u8(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x % rhs.x),
+		static_cast<u8>(this->y % rhs.y),
+		static_cast<u8>(this->z % rhs.z)
+	};
 }
 
 Vector3_u8 Vector3_u8::operator + (u8 rhs)  {
-	return Vector3_u8(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x + rhs),
+		static_cast<u8>(this->y + rhs),
+		static_cast<u8>(this->z + rhs)
+	};
 }
 
 Vector3_u8 Vector3_u8::operator - (u8 rhs) {
-	return Vector3_u8(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x - rhs),
+		static_cast<u8>(this->y - rhs),
+		static_cast<u8>(this->z - rhs)
+	};
 }
 
 Vector3_u8 Vector3_u8::operator * (u8 rhs) {
-	return Vector3_u8(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x * rhs),
+		static_cast<u8>(this->y * rhs),
+		static_cast<u8>(this->z * rhs)
+	};
 }
 
 Vector3_u8 Vector3_u8::operator / (u8 rhs) {
-	return Vector3_u8(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x / rhs),
+		static_cast<u8>(this->y / rhs),
+		static_cast<u8>(this->z / rhs)
+	};
 }
 
 Vector3_u8 Vector3_u8::operator % (u8 rhs) {
-	return Vector3_u8(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs
-	);
+	return Vector3_u8 {
+		static_cast<u8>(this->x % rhs),
+		static_cast<u8>(this->y % rhs),
+		static_cast<u8>(this->z % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -1969,83 +1969,83 @@ Vector3_s16 & Vector3_s16::operator %= (s16 rhs) {
 }
 
 Vector3_s16 Vector3_s16::operator + (Vector3_s16 rhs) {
-	return Vector3_s16(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x + rhs.x),
+		static_cast<s16>(this->y + rhs.y),
+		static_cast<s16>(this->z + rhs.z)
+	};
 }
 
 Vector3_s16 Vector3_s16::operator - (Vector3_s16 rhs) {
-	return Vector3_s16(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x - rhs.x),
+		static_cast<s16>(this->y - rhs.y),
+		static_cast<s16>(this->z - rhs.z)
+	};
 }
 
 Vector3_s16 Vector3_s16::operator * (Vector3_s16 rhs) {
-	return Vector3_s16(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x * rhs.x),
+		static_cast<s16>(this->y * rhs.y),
+		static_cast<s16>(this->z * rhs.z)
+	};
 }
 
 Vector3_s16 Vector3_s16::operator / (Vector3_s16 rhs) {
-	return Vector3_s16(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x / rhs.x),
+		static_cast<s16>(this->y / rhs.y),
+		static_cast<s16>(this->z / rhs.z)
+	};
 }
 
 Vector3_s16 Vector3_s16::operator % (Vector3_s16 rhs) {
-	return Vector3_s16(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x % rhs.x),
+		static_cast<s16>(this->y % rhs.y),
+		static_cast<s16>(this->z % rhs.z)
+	};
 }
 
 Vector3_s16 Vector3_s16::operator + (s16 rhs)  {
-	return Vector3_s16(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x + rhs),
+		static_cast<s16>(this->y + rhs),
+		static_cast<s16>(this->z + rhs)
+	};
 }
 
 Vector3_s16 Vector3_s16::operator - (s16 rhs) {
-	return Vector3_s16(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x - rhs),
+		static_cast<s16>(this->y - rhs),
+		static_cast<s16>(this->z - rhs)
+	};
 }
 
 Vector3_s16 Vector3_s16::operator * (s16 rhs) {
-	return Vector3_s16(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x * rhs),
+		static_cast<s16>(this->y * rhs),
+		static_cast<s16>(this->z * rhs)
+	};
 }
 
 Vector3_s16 Vector3_s16::operator / (s16 rhs) {
-	return Vector3_s16(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x / rhs),
+		static_cast<s16>(this->y / rhs),
+		static_cast<s16>(this->z / rhs)
+	};
 }
 
 Vector3_s16 Vector3_s16::operator % (s16 rhs) {
-	return Vector3_s16(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs
-	);
+	return Vector3_s16 {
+		static_cast<s16>(this->x % rhs),
+		static_cast<s16>(this->y % rhs),
+		static_cast<s16>(this->z % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -2145,83 +2145,83 @@ Vector3_u16 & Vector3_u16::operator %= (u16 rhs) {
 }
 
 Vector3_u16 Vector3_u16::operator + (Vector3_u16 rhs) {
-	return Vector3_u16(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x + rhs.x),
+		static_cast<u16>(this->y + rhs.y),
+		static_cast<u16>(this->z + rhs.z)
+	};
 }
 
 Vector3_u16 Vector3_u16::operator - (Vector3_u16 rhs) {
-	return Vector3_u16(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x - rhs.x),
+		static_cast<u16>(this->y - rhs.y),
+		static_cast<u16>(this->z - rhs.z)
+	};
 }
 
 Vector3_u16 Vector3_u16::operator * (Vector3_u16 rhs) {
-	return Vector3_u16(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x * rhs.x),
+		static_cast<u16>(this->y * rhs.y),
+		static_cast<u16>(this->z * rhs.z)
+	};
 }
 
 Vector3_u16 Vector3_u16::operator / (Vector3_u16 rhs) {
-	return Vector3_u16(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x / rhs.x),
+		static_cast<u16>(this->y / rhs.y),
+		static_cast<u16>(this->z / rhs.z)
+	};
 }
 
 Vector3_u16 Vector3_u16::operator % (Vector3_u16 rhs) {
-	return Vector3_u16(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x % rhs.x),
+		static_cast<u16>(this->y % rhs.y),
+		static_cast<u16>(this->z % rhs.z)
+	};
 }
 
 Vector3_u16 Vector3_u16::operator + (u16 rhs)  {
-	return Vector3_u16(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x + rhs),
+		static_cast<u16>(this->y + rhs),
+		static_cast<u16>(this->z + rhs)
+	};
 }
 
 Vector3_u16 Vector3_u16::operator - (u16 rhs) {
-	return Vector3_u16(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x - rhs),
+		static_cast<u16>(this->y - rhs),
+		static_cast<u16>(this->z - rhs)
+	};
 }
 
 Vector3_u16 Vector3_u16::operator * (u16 rhs) {
-	return Vector3_u16(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x * rhs),
+		static_cast<u16>(this->y * rhs),
+		static_cast<u16>(this->z * rhs)
+	};
 }
 
 Vector3_u16 Vector3_u16::operator / (u16 rhs) {
-	return Vector3_u16(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x / rhs),
+		static_cast<u16>(this->y / rhs),
+		static_cast<u16>(this->z / rhs)
+	};
 }
 
 Vector3_u16 Vector3_u16::operator % (u16 rhs) {
-	return Vector3_u16(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs
-	);
+	return Vector3_u16 {
+		static_cast<u16>(this->x % rhs),
+		static_cast<u16>(this->y % rhs),
+		static_cast<u16>(this->z % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -2321,83 +2321,83 @@ Vector3_s32 & Vector3_s32::operator %= (s32 rhs) {
 }
 
 Vector3_s32 Vector3_s32::operator + (Vector3_s32 rhs) {
-	return Vector3_s32(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x + rhs.x),
+		static_cast<s32>(this->y + rhs.y),
+		static_cast<s32>(this->z + rhs.z)
+	};
 }
 
 Vector3_s32 Vector3_s32::operator - (Vector3_s32 rhs) {
-	return Vector3_s32(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x - rhs.x),
+		static_cast<s32>(this->y - rhs.y),
+		static_cast<s32>(this->z - rhs.z)
+	};
 }
 
 Vector3_s32 Vector3_s32::operator * (Vector3_s32 rhs) {
-	return Vector3_s32(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x * rhs.x),
+		static_cast<s32>(this->y * rhs.y),
+		static_cast<s32>(this->z * rhs.z)
+	};
 }
 
 Vector3_s32 Vector3_s32::operator / (Vector3_s32 rhs) {
-	return Vector3_s32(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x / rhs.x),
+		static_cast<s32>(this->y / rhs.y),
+		static_cast<s32>(this->z / rhs.z)
+	};
 }
 
 Vector3_s32 Vector3_s32::operator % (Vector3_s32 rhs) {
-	return Vector3_s32(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x % rhs.x),
+		static_cast<s32>(this->y % rhs.y),
+		static_cast<s32>(this->z % rhs.z)
+	};
 }
 
 Vector3_s32 Vector3_s32::operator + (s32 rhs)  {
-	return Vector3_s32(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x + rhs),
+		static_cast<s32>(this->y + rhs),
+		static_cast<s32>(this->z + rhs)
+	};
 }
 
 Vector3_s32 Vector3_s32::operator - (s32 rhs) {
-	return Vector3_s32(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x - rhs),
+		static_cast<s32>(this->y - rhs),
+		static_cast<s32>(this->z - rhs)
+	};
 }
 
 Vector3_s32 Vector3_s32::operator * (s32 rhs) {
-	return Vector3_s32(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x * rhs),
+		static_cast<s32>(this->y * rhs),
+		static_cast<s32>(this->z * rhs)
+	};
 }
 
 Vector3_s32 Vector3_s32::operator / (s32 rhs) {
-	return Vector3_s32(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x / rhs),
+		static_cast<s32>(this->y / rhs),
+		static_cast<s32>(this->z / rhs)
+	};
 }
 
 Vector3_s32 Vector3_s32::operator % (s32 rhs) {
-	return Vector3_s32(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs
-	);
+	return Vector3_s32 {
+		static_cast<s32>(this->x % rhs),
+		static_cast<s32>(this->y % rhs),
+		static_cast<s32>(this->z % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -2497,83 +2497,83 @@ Vector3_u32 & Vector3_u32::operator %= (u32 rhs) {
 }
 
 Vector3_u32 Vector3_u32::operator + (Vector3_u32 rhs) {
-	return Vector3_u32(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x + rhs.x),
+		static_cast<u32>(this->y + rhs.y),
+		static_cast<u32>(this->z + rhs.z)
+	};
 }
 
 Vector3_u32 Vector3_u32::operator - (Vector3_u32 rhs) {
-	return Vector3_u32(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x - rhs.x),
+		static_cast<u32>(this->y - rhs.y),
+		static_cast<u32>(this->z - rhs.z)
+	};
 }
 
 Vector3_u32 Vector3_u32::operator * (Vector3_u32 rhs) {
-	return Vector3_u32(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x * rhs.x),
+		static_cast<u32>(this->y * rhs.y),
+		static_cast<u32>(this->z * rhs.z)
+	};
 }
 
 Vector3_u32 Vector3_u32::operator / (Vector3_u32 rhs) {
-	return Vector3_u32(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x / rhs.x),
+		static_cast<u32>(this->y / rhs.y),
+		static_cast<u32>(this->z / rhs.z)
+	};
 }
 
 Vector3_u32 Vector3_u32::operator % (Vector3_u32 rhs) {
-	return Vector3_u32(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x % rhs.x),
+		static_cast<u32>(this->y % rhs.y),
+		static_cast<u32>(this->z % rhs.z)
+	};
 }
 
 Vector3_u32 Vector3_u32::operator + (u32 rhs)  {
-	return Vector3_u32(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x + rhs),
+		static_cast<u32>(this->y + rhs),
+		static_cast<u32>(this->z + rhs)
+	};
 }
 
 Vector3_u32 Vector3_u32::operator - (u32 rhs) {
-	return Vector3_u32(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x - rhs),
+		static_cast<u32>(this->y - rhs),
+		static_cast<u32>(this->z - rhs)
+	};
 }
 
 Vector3_u32 Vector3_u32::operator * (u32 rhs) {
-	return Vector3_u32(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x * rhs),
+		static_cast<u32>(this->y * rhs),
+		static_cast<u32>(this->z * rhs)
+	};
 }
 
 Vector3_u32 Vector3_u32::operator / (u32 rhs) {
-	return Vector3_u32(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x / rhs),
+		static_cast<u32>(this->y / rhs),
+		static_cast<u32>(this->z / rhs)
+	};
 }
 
 Vector3_u32 Vector3_u32::operator % (u32 rhs) {
-	return Vector3_u32(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs
-	);
+	return Vector3_u32 {
+		static_cast<u32>(this->x % rhs),
+		static_cast<u32>(this->y % rhs),
+		static_cast<u32>(this->z % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -2673,83 +2673,83 @@ Vector3_s64 & Vector3_s64::operator %= (s64 rhs) {
 }
 
 Vector3_s64 Vector3_s64::operator + (Vector3_s64 rhs) {
-	return Vector3_s64(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x + rhs.x),
+		static_cast<s64>(this->y + rhs.y),
+		static_cast<s64>(this->z + rhs.z)
+	};
 }
 
 Vector3_s64 Vector3_s64::operator - (Vector3_s64 rhs) {
-	return Vector3_s64(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x - rhs.x),
+		static_cast<s64>(this->y - rhs.y),
+		static_cast<s64>(this->z - rhs.z)
+	};
 }
 
 Vector3_s64 Vector3_s64::operator * (Vector3_s64 rhs) {
-	return Vector3_s64(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x * rhs.x),
+		static_cast<s64>(this->y * rhs.y),
+		static_cast<s64>(this->z * rhs.z)
+	};
 }
 
 Vector3_s64 Vector3_s64::operator / (Vector3_s64 rhs) {
-	return Vector3_s64(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x / rhs.x),
+		static_cast<s64>(this->y / rhs.y),
+		static_cast<s64>(this->z / rhs.z)
+	};
 }
 
 Vector3_s64 Vector3_s64::operator % (Vector3_s64 rhs) {
-	return Vector3_s64(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x % rhs.x),
+		static_cast<s64>(this->y % rhs.y),
+		static_cast<s64>(this->z % rhs.z)
+	};
 }
 
 Vector3_s64 Vector3_s64::operator + (s64 rhs)  {
-	return Vector3_s64(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x + rhs),
+		static_cast<s64>(this->y + rhs),
+		static_cast<s64>(this->z + rhs)
+	};
 }
 
 Vector3_s64 Vector3_s64::operator - (s64 rhs) {
-	return Vector3_s64(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x - rhs),
+		static_cast<s64>(this->y - rhs),
+		static_cast<s64>(this->z - rhs)
+	};
 }
 
 Vector3_s64 Vector3_s64::operator * (s64 rhs) {
-	return Vector3_s64(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x * rhs),
+		static_cast<s64>(this->y * rhs),
+		static_cast<s64>(this->z * rhs)
+	};
 }
 
 Vector3_s64 Vector3_s64::operator / (s64 rhs) {
-	return Vector3_s64(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x / rhs),
+		static_cast<s64>(this->y / rhs),
+		static_cast<s64>(this->z / rhs)
+	};
 }
 
 Vector3_s64 Vector3_s64::operator % (s64 rhs) {
-	return Vector3_s64(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs
-	);
+	return Vector3_s64 {
+		static_cast<s64>(this->x % rhs),
+		static_cast<s64>(this->y % rhs),
+		static_cast<s64>(this->z % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -2849,83 +2849,83 @@ Vector3_u64 & Vector3_u64::operator %= (u64 rhs) {
 }
 
 Vector3_u64 Vector3_u64::operator + (Vector3_u64 rhs) {
-	return Vector3_u64(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x + rhs.x),
+		static_cast<u64>(this->y + rhs.y),
+		static_cast<u64>(this->z + rhs.z)
+	};
 }
 
 Vector3_u64 Vector3_u64::operator - (Vector3_u64 rhs) {
-	return Vector3_u64(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x - rhs.x),
+		static_cast<u64>(this->y - rhs.y),
+		static_cast<u64>(this->z - rhs.z)
+	};
 }
 
 Vector3_u64 Vector3_u64::operator * (Vector3_u64 rhs) {
-	return Vector3_u64(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x * rhs.x),
+		static_cast<u64>(this->y * rhs.y),
+		static_cast<u64>(this->z * rhs.z)
+	};
 }
 
 Vector3_u64 Vector3_u64::operator / (Vector3_u64 rhs) {
-	return Vector3_u64(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x / rhs.x),
+		static_cast<u64>(this->y / rhs.y),
+		static_cast<u64>(this->z / rhs.z)
+	};
 }
 
 Vector3_u64 Vector3_u64::operator % (Vector3_u64 rhs) {
-	return Vector3_u64(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x % rhs.x),
+		static_cast<u64>(this->y % rhs.y),
+		static_cast<u64>(this->z % rhs.z)
+	};
 }
 
 Vector3_u64 Vector3_u64::operator + (u64 rhs)  {
-	return Vector3_u64(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x + rhs),
+		static_cast<u64>(this->y + rhs),
+		static_cast<u64>(this->z + rhs)
+	};
 }
 
 Vector3_u64 Vector3_u64::operator - (u64 rhs) {
-	return Vector3_u64(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x - rhs),
+		static_cast<u64>(this->y - rhs),
+		static_cast<u64>(this->z - rhs)
+	};
 }
 
 Vector3_u64 Vector3_u64::operator * (u64 rhs) {
-	return Vector3_u64(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x * rhs),
+		static_cast<u64>(this->y * rhs),
+		static_cast<u64>(this->z * rhs)
+	};
 }
 
 Vector3_u64 Vector3_u64::operator / (u64 rhs) {
-	return Vector3_u64(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x / rhs),
+		static_cast<u64>(this->y / rhs),
+		static_cast<u64>(this->z / rhs)
+	};
 }
 
 Vector3_u64 Vector3_u64::operator % (u64 rhs) {
-	return Vector3_u64(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs
-	);
+	return Vector3_u64 {
+		static_cast<u64>(this->x % rhs),
+		static_cast<u64>(this->y % rhs),
+		static_cast<u64>(this->z % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -3011,67 +3011,67 @@ Vector3_f32 & Vector3_f32::operator /= (f32 rhs) {
 }
 
 Vector3_f32 Vector3_f32::operator + (Vector3_f32 rhs) {
-	return Vector3_f32(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_f32 {
+		static_cast<f32>(this->x + rhs.x),
+		static_cast<f32>(this->y + rhs.y),
+		static_cast<f32>(this->z + rhs.z)
+	};
 }
 
 Vector3_f32 Vector3_f32::operator - (Vector3_f32 rhs) {
-	return Vector3_f32(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z +- rhs.z
-	);
+	return Vector3_f32 {
+		static_cast<f32>(this->x - rhs.x),
+		static_cast<f32>(this->y - rhs.y),
+		static_cast<f32>(this->z - rhs.z)
+	};
 }
 
 Vector3_f32 Vector3_f32::operator * (Vector3_f32 rhs) {
-	return Vector3_f32(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_f32 {
+		static_cast<f32>(this->x * rhs.x),
+		static_cast<f32>(this->y * rhs.y),
+		static_cast<f32>(this->z * rhs.z)
+	};
 }
 
 Vector3_f32 Vector3_f32::operator / (Vector3_f32 rhs) {
-	return Vector3_f32(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_f32 {
+		static_cast<f32>(this->x / rhs.x),
+		static_cast<f32>(this->y / rhs.y),
+		static_cast<f32>(this->z / rhs.z)
+	};
 }
 
 Vector3_f32 Vector3_f32::operator + (f32 rhs)  {
-	return Vector3_f32(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_f32 {
+		static_cast<f32>(this->x + rhs),
+		static_cast<f32>(this->y + rhs),
+		static_cast<f32>(this->z + rhs)
+	};
 }
 
 Vector3_f32 Vector3_f32::operator - (f32 rhs) {
-	return Vector3_f32(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_f32 {
+		static_cast<f32>(this->x - rhs),
+		static_cast<f32>(this->y - rhs),
+		static_cast<f32>(this->z - rhs)
+	};
 }
 
 Vector3_f32 Vector3_f32::operator * (f32 rhs) {
-	return Vector3_f32(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_f32 {
+		static_cast<f32>(this->x * rhs),
+		static_cast<f32>(this->y * rhs),
+		static_cast<f32>(this->z * rhs)
+	};
 }
 
 Vector3_f32 Vector3_f32::operator / (f32 rhs) {
-	return Vector3_f32(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_f32 {
+		static_cast<f32>(this->x / rhs),
+		static_cast<f32>(this->y / rhs),
+		static_cast<f32>(this->z / rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -3157,67 +3157,67 @@ Vector3_f64 & Vector3_f64::operator /= (f64 rhs) {
 }
 
 Vector3_f64 Vector3_f64::operator + (Vector3_f64 rhs) {
-	return Vector3_f64(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z
-	);
+	return Vector3_f64 {
+		static_cast<f64>(this->x + rhs.x),
+		static_cast<f64>(this->y + rhs.y),
+		static_cast<f64>(this->z + rhs.z)
+	};
 }
 
 Vector3_f64 Vector3_f64::operator - (Vector3_f64 rhs) {
-	return Vector3_f64(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z
-	);
+	return Vector3_f64 {
+		static_cast<f64>(this->x - rhs.x),
+		static_cast<f64>(this->y - rhs.y),
+		static_cast<f64>(this->z - rhs.z)
+	};
 }
 
 Vector3_f64 Vector3_f64::operator * (Vector3_f64 rhs) {
-	return Vector3_f64(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z
-	);
+	return Vector3_f64 {
+		static_cast<f64>(this->x * rhs.x),
+		static_cast<f64>(this->y * rhs.y),
+		static_cast<f64>(this->z * rhs.z)
+	};
 }
 
 Vector3_f64 Vector3_f64::operator / (Vector3_f64 rhs) {
-	return Vector3_f64(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z
-	);
+	return Vector3_f64 {
+		static_cast<f64>(this->x / rhs.x),
+		static_cast<f64>(this->y / rhs.y),
+		static_cast<f64>(this->z / rhs.z)
+	};
 }
 
 Vector3_f64 Vector3_f64::operator + (f64 rhs)  {
-	return Vector3_f64(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs
-	);
+	return Vector3_f64 {
+		static_cast<f64>(this->x + rhs),
+		static_cast<f64>(this->y + rhs),
+		static_cast<f64>(this->z + rhs)
+	};
 }
 
 Vector3_f64 Vector3_f64::operator - (f64 rhs) {
-	return Vector3_f64(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs
-	);
+	return Vector3_f64 {
+		static_cast<f64>(this->x - rhs),
+		static_cast<f64>(this->y - rhs),
+		static_cast<f64>(this->z - rhs)
+	};
 }
 
 Vector3_f64 Vector3_f64::operator * (f64 rhs) {
-	return Vector3_f64(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs
-	);
+	return Vector3_f64 {
+		static_cast<f64>(this->x * rhs),
+		static_cast<f64>(this->y * rhs),
+		static_cast<f64>(this->z * rhs)
+	};
 }
 
 Vector3_f64 Vector3_f64::operator / (f64 rhs) {
-	return Vector3_f64(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs
-	);
+	return Vector3_f64 {
+		static_cast<f64>(this->x / rhs),
+		static_cast<f64>(this->y / rhs),
+		static_cast<f64>(this->z / rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -3330,93 +3330,93 @@ Vector4_s8 & Vector4_s8::operator %= (s8 rhs) {
 }
 
 Vector4_s8 Vector4_s8::operator + (Vector4_s8 rhs) {
-	return Vector4_s8(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x + rhs.x),
+		static_cast<s8>(this->y + rhs.y),
+		static_cast<s8>(this->z + rhs.z),
+		static_cast<s8>(this->w + rhs.w)
+	};
 }
 
 Vector4_s8 Vector4_s8::operator - (Vector4_s8 rhs) {
-	return Vector4_s8(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x - rhs.x),
+		static_cast<s8>(this->y - rhs.y),
+		static_cast<s8>(this->z - rhs.z),
+		static_cast<s8>(this->w - rhs.w)
+	};
 }
 
 Vector4_s8 Vector4_s8::operator * (Vector4_s8 rhs) {
-	return Vector4_s8(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x * rhs.x),
+		static_cast<s8>(this->y * rhs.y),
+		static_cast<s8>(this->z * rhs.z),
+		static_cast<s8>(this->w * rhs.w)
+	};
 }
 
 Vector4_s8 Vector4_s8::operator / (Vector4_s8 rhs) {
-	return Vector4_s8(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x / rhs.x),
+		static_cast<s8>(this->y / rhs.y),
+		static_cast<s8>(this->z / rhs.z),
+		static_cast<s8>(this->w / rhs.w)
+	};
 }
 
 Vector4_s8 Vector4_s8::operator % (Vector4_s8 rhs) {
-	return Vector4_s8(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z,
-		this->w % rhs.w
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x % rhs.x),
+		static_cast<s8>(this->y % rhs.y),
+		static_cast<s8>(this->z % rhs.z),
+		static_cast<s8>(this->w % rhs.w)
+	};
 }
 
 Vector4_s8 Vector4_s8::operator + (s8 rhs)  {
-	return Vector4_s8(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x + rhs),
+		static_cast<s8>(this->y + rhs),
+		static_cast<s8>(this->z + rhs),
+		static_cast<s8>(this->w + rhs)
+	};
 }
 
 Vector4_s8 Vector4_s8::operator - (s8 rhs) {
-	return Vector4_s8(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x - rhs),
+		static_cast<s8>(this->y - rhs),
+		static_cast<s8>(this->z - rhs),
+		static_cast<s8>(this->w - rhs)
+	};
 }
 
 Vector4_s8 Vector4_s8::operator * (s8 rhs) {
-	return Vector4_s8(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x * rhs),
+		static_cast<s8>(this->y * rhs),
+		static_cast<s8>(this->z * rhs),
+		static_cast<s8>(this->w * rhs)
+	};
 }
 
 Vector4_s8 Vector4_s8::operator / (s8 rhs) {
-	return Vector4_s8(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x / rhs),
+		static_cast<s8>(this->y / rhs),
+		static_cast<s8>(this->z / rhs),
+		static_cast<s8>(this->w / rhs)
+	};
 }
 
 Vector4_s8 Vector4_s8::operator % (s8 rhs) {
-	return Vector4_s8(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs,
-		this->w % rhs
-	);
+	return Vector4_s8 {
+		static_cast<s8>(this->x % rhs),
+		static_cast<s8>(this->y % rhs),
+		static_cast<s8>(this->z % rhs),
+		static_cast<s8>(this->w % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -3529,93 +3529,93 @@ Vector4_u8 & Vector4_u8::operator %= (u8 rhs) {
 }
 
 Vector4_u8 Vector4_u8::operator + (Vector4_u8 rhs) {
-	return Vector4_u8(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x + rhs.x),
+		static_cast<u8>(this->y + rhs.y),
+		static_cast<u8>(this->z + rhs.z),
+		static_cast<u8>(this->w + rhs.w)
+	};
 }
 
 Vector4_u8 Vector4_u8::operator - (Vector4_u8 rhs) {
-	return Vector4_u8(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x - rhs.x),
+		static_cast<u8>(this->y - rhs.y),
+		static_cast<u8>(this->z - rhs.z),
+		static_cast<u8>(this->w - rhs.w)
+	};
 }
 
 Vector4_u8 Vector4_u8::operator * (Vector4_u8 rhs) {
-	return Vector4_u8(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x * rhs.x),
+		static_cast<u8>(this->y * rhs.y),
+		static_cast<u8>(this->z * rhs.z),
+		static_cast<u8>(this->w * rhs.w)
+	};
 }
 
 Vector4_u8 Vector4_u8::operator / (Vector4_u8 rhs) {
-	return Vector4_u8(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x / rhs.x),
+		static_cast<u8>(this->y / rhs.y),
+		static_cast<u8>(this->z / rhs.z),
+		static_cast<u8>(this->w / rhs.w)
+	};
 }
 
 Vector4_u8 Vector4_u8::operator % (Vector4_u8 rhs) {
-	return Vector4_u8(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z,
-		this->w % rhs.w
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x % rhs.x),
+		static_cast<u8>(this->y % rhs.y),
+		static_cast<u8>(this->z % rhs.z),
+		static_cast<u8>(this->w % rhs.w)
+	};
 }
 
 Vector4_u8 Vector4_u8::operator + (u8 rhs)  {
-	return Vector4_u8(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x + rhs),
+		static_cast<u8>(this->y + rhs),
+		static_cast<u8>(this->z + rhs),
+		static_cast<u8>(this->w + rhs)
+	};
 }
 
 Vector4_u8 Vector4_u8::operator - (u8 rhs) {
-	return Vector4_u8(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x - rhs),
+		static_cast<u8>(this->y - rhs),
+		static_cast<u8>(this->z - rhs),
+		static_cast<u8>(this->w - rhs)
+	};
 }
 
 Vector4_u8 Vector4_u8::operator * (u8 rhs) {
-	return Vector4_u8(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x * rhs),
+		static_cast<u8>(this->y * rhs),
+		static_cast<u8>(this->z * rhs),
+		static_cast<u8>(this->w * rhs)
+	};
 }
 
 Vector4_u8 Vector4_u8::operator / (u8 rhs) {
-	return Vector4_u8(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x / rhs),
+		static_cast<u8>(this->y / rhs),
+		static_cast<u8>(this->z / rhs),
+		static_cast<u8>(this->w / rhs)
+	};
 }
 
 Vector4_u8 Vector4_u8::operator % (u8 rhs) {
-	return Vector4_u8(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs,
-		this->w % rhs
-	);
+	return Vector4_u8 {
+		static_cast<u8>(this->x % rhs),
+		static_cast<u8>(this->y % rhs),
+		static_cast<u8>(this->z % rhs),
+		static_cast<u8>(this->w % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -3728,93 +3728,93 @@ Vector4_s16 & Vector4_s16::operator %= (s16 rhs) {
 }
 
 Vector4_s16 Vector4_s16::operator + (Vector4_s16 rhs) {
-	return Vector4_s16(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x + rhs.x),
+		static_cast<s16>(this->y + rhs.y),
+		static_cast<s16>(this->z + rhs.z),
+		static_cast<s16>(this->w + rhs.w)
+	};
 }
 
 Vector4_s16 Vector4_s16::operator - (Vector4_s16 rhs) {
-	return Vector4_s16(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x - rhs.x),
+		static_cast<s16>(this->y - rhs.y),
+		static_cast<s16>(this->z - rhs.z),
+		static_cast<s16>(this->w - rhs.w)
+	};
 }
 
 Vector4_s16 Vector4_s16::operator * (Vector4_s16 rhs) {
-	return Vector4_s16(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x * rhs.x),
+		static_cast<s16>(this->y * rhs.y),
+		static_cast<s16>(this->z * rhs.z),
+		static_cast<s16>(this->w * rhs.w)
+	};
 }
 
 Vector4_s16 Vector4_s16::operator / (Vector4_s16 rhs) {
-	return Vector4_s16(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x / rhs.x),
+		static_cast<s16>(this->y / rhs.y),
+		static_cast<s16>(this->z / rhs.z),
+		static_cast<s16>(this->w / rhs.w)
+	};
 }
 
 Vector4_s16 Vector4_s16::operator % (Vector4_s16 rhs) {
-	return Vector4_s16(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z,
-		this->w % rhs.w
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x % rhs.x),
+		static_cast<s16>(this->y % rhs.y),
+		static_cast<s16>(this->z % rhs.z),
+		static_cast<s16>(this->w % rhs.w)
+	};
 }
 
 Vector4_s16 Vector4_s16::operator + (s16 rhs)  {
-	return Vector4_s16(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x + rhs),
+		static_cast<s16>(this->y + rhs),
+		static_cast<s16>(this->z + rhs),
+		static_cast<s16>(this->w + rhs)
+	};
 }
 
 Vector4_s16 Vector4_s16::operator - (s16 rhs) {
-	return Vector4_s16(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x - rhs),
+		static_cast<s16>(this->y - rhs),
+		static_cast<s16>(this->z - rhs),
+		static_cast<s16>(this->w - rhs)
+	};
 }
 
 Vector4_s16 Vector4_s16::operator * (s16 rhs) {
-	return Vector4_s16(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x * rhs),
+		static_cast<s16>(this->y * rhs),
+		static_cast<s16>(this->z * rhs),
+		static_cast<s16>(this->w * rhs)
+	};
 }
 
 Vector4_s16 Vector4_s16::operator / (s16 rhs) {
-	return Vector4_s16(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x / rhs),
+		static_cast<s16>(this->y / rhs),
+		static_cast<s16>(this->z / rhs),
+		static_cast<s16>(this->w / rhs)
+	};
 }
 
 Vector4_s16 Vector4_s16::operator % (s16 rhs) {
-	return Vector4_s16(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs,
-		this->w % rhs
-	);
+	return Vector4_s16 {
+		static_cast<s16>(this->x % rhs),
+		static_cast<s16>(this->y % rhs),
+		static_cast<s16>(this->z % rhs),
+		static_cast<s16>(this->w % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -3927,93 +3927,93 @@ Vector4_u16 & Vector4_u16::operator %= (u16 rhs) {
 }
 
 Vector4_u16 Vector4_u16::operator + (Vector4_u16 rhs) {
-	return Vector4_u16(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x + rhs.x),
+		static_cast<u16>(this->y + rhs.y),
+		static_cast<u16>(this->z + rhs.z),
+		static_cast<u16>(this->w + rhs.w)
+	};
 }
 
 Vector4_u16 Vector4_u16::operator - (Vector4_u16 rhs) {
-	return Vector4_u16(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x - rhs.x),
+		static_cast<u16>(this->y - rhs.y),
+		static_cast<u16>(this->z - rhs.z),
+		static_cast<u16>(this->w - rhs.w)
+	};
 }
 
 Vector4_u16 Vector4_u16::operator * (Vector4_u16 rhs) {
-	return Vector4_u16(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x * rhs.x),
+		static_cast<u16>(this->y * rhs.y),
+		static_cast<u16>(this->z * rhs.z),
+		static_cast<u16>(this->w * rhs.w)
+	};
 }
 
 Vector4_u16 Vector4_u16::operator / (Vector4_u16 rhs) {
-	return Vector4_u16(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x / rhs.x),
+		static_cast<u16>(this->y / rhs.y),
+		static_cast<u16>(this->z / rhs.z),
+		static_cast<u16>(this->w / rhs.w)
+	};
 }
 
 Vector4_u16 Vector4_u16::operator % (Vector4_u16 rhs) {
-	return Vector4_u16(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z,
-		this->w % rhs.w
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x % rhs.x),
+		static_cast<u16>(this->y % rhs.y),
+		static_cast<u16>(this->z % rhs.z),
+		static_cast<u16>(this->w % rhs.w)
+	};
 }
 
 Vector4_u16 Vector4_u16::operator + (u16 rhs)  {
-	return Vector4_u16(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x + rhs),
+		static_cast<u16>(this->y + rhs),
+		static_cast<u16>(this->z + rhs),
+		static_cast<u16>(this->w + rhs)
+	};
 }
 
 Vector4_u16 Vector4_u16::operator - (u16 rhs) {
-	return Vector4_u16(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x - rhs),
+		static_cast<u16>(this->y - rhs),
+		static_cast<u16>(this->z - rhs),
+		static_cast<u16>(this->w - rhs)
+	};
 }
 
 Vector4_u16 Vector4_u16::operator * (u16 rhs) {
-	return Vector4_u16(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x * rhs),
+		static_cast<u16>(this->y * rhs),
+		static_cast<u16>(this->z * rhs),
+		static_cast<u16>(this->w * rhs)
+	};
 }
 
 Vector4_u16 Vector4_u16::operator / (u16 rhs) {
-	return Vector4_u16(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x / rhs),
+		static_cast<u16>(this->y / rhs),
+		static_cast<u16>(this->z / rhs),
+		static_cast<u16>(this->w / rhs)
+	};
 }
 
 Vector4_u16 Vector4_u16::operator % (u16 rhs) {
-	return Vector4_u16(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs,
-		this->w % rhs
-	);
+	return Vector4_u16 {
+		static_cast<u16>(this->x % rhs),
+		static_cast<u16>(this->y % rhs),
+		static_cast<u16>(this->z % rhs),
+		static_cast<u16>(this->w % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -4126,93 +4126,93 @@ Vector4_s32 & Vector4_s32::operator %= (s32 rhs) {
 }
 
 Vector4_s32 Vector4_s32::operator + (Vector4_s32 rhs) {
-	return Vector4_s32(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x + rhs.x),
+		static_cast<s32>(this->y + rhs.y),
+		static_cast<s32>(this->z + rhs.z),
+		static_cast<s32>(this->w + rhs.w)
+	};
 }
 
 Vector4_s32 Vector4_s32::operator - (Vector4_s32 rhs) {
-	return Vector4_s32(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x - rhs.x),
+		static_cast<s32>(this->y - rhs.y),
+		static_cast<s32>(this->z - rhs.z),
+		static_cast<s32>(this->w - rhs.w)
+	};
 }
 
 Vector4_s32 Vector4_s32::operator * (Vector4_s32 rhs) {
-	return Vector4_s32(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x * rhs.x),
+		static_cast<s32>(this->y * rhs.y),
+		static_cast<s32>(this->z * rhs.z),
+		static_cast<s32>(this->w * rhs.w)
+	};
 }
 
 Vector4_s32 Vector4_s32::operator / (Vector4_s32 rhs) {
-	return Vector4_s32(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x / rhs.x),
+		static_cast<s32>(this->y / rhs.y),
+		static_cast<s32>(this->z / rhs.z),
+		static_cast<s32>(this->w / rhs.w)
+	};
 }
 
 Vector4_s32 Vector4_s32::operator % (Vector4_s32 rhs) {
-	return Vector4_s32(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z,
-		this->w % rhs.w
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x % rhs.x),
+		static_cast<s32>(this->y % rhs.y),
+		static_cast<s32>(this->z % rhs.z),
+		static_cast<s32>(this->w % rhs.w)
+	};
 }
 
 Vector4_s32 Vector4_s32::operator + (s32 rhs)  {
-	return Vector4_s32(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x + rhs),
+		static_cast<s32>(this->y + rhs),
+		static_cast<s32>(this->z + rhs),
+		static_cast<s32>(this->w + rhs)
+	};
 }
 
 Vector4_s32 Vector4_s32::operator - (s32 rhs) {
-	return Vector4_s32(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x - rhs),
+		static_cast<s32>(this->y - rhs),
+		static_cast<s32>(this->z - rhs),
+		static_cast<s32>(this->w - rhs)
+	};
 }
 
 Vector4_s32 Vector4_s32::operator * (s32 rhs) {
-	return Vector4_s32(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x * rhs),
+		static_cast<s32>(this->y * rhs),
+		static_cast<s32>(this->z * rhs),
+		static_cast<s32>(this->w * rhs)
+	};
 }
 
 Vector4_s32 Vector4_s32::operator / (s32 rhs) {
-	return Vector4_s32(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x / rhs),
+		static_cast<s32>(this->y / rhs),
+		static_cast<s32>(this->z / rhs),
+		static_cast<s32>(this->w / rhs)
+	};
 }
 
 Vector4_s32 Vector4_s32::operator % (s32 rhs) {
-	return Vector4_s32(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs,
-		this->w % rhs
-	);
+	return Vector4_s32 {
+		static_cast<s32>(this->x % rhs),
+		static_cast<s32>(this->y % rhs),
+		static_cast<s32>(this->z % rhs),
+		static_cast<s32>(this->w % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -4325,93 +4325,93 @@ Vector4_u32 & Vector4_u32::operator %= (u32 rhs) {
 }
 
 Vector4_u32 Vector4_u32::operator + (Vector4_u32 rhs) {
-	return Vector4_u32(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x + rhs.x),
+		static_cast<u32>(this->y + rhs.y),
+		static_cast<u32>(this->z + rhs.z),
+		static_cast<u32>(this->w + rhs.w)
+	};
 }
 
 Vector4_u32 Vector4_u32::operator - (Vector4_u32 rhs) {
-	return Vector4_u32(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x - rhs.x),
+		static_cast<u32>(this->y - rhs.y),
+		static_cast<u32>(this->z - rhs.z),
+		static_cast<u32>(this->w - rhs.w)
+	};
 }
 
 Vector4_u32 Vector4_u32::operator * (Vector4_u32 rhs) {
-	return Vector4_u32(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x * rhs.x),
+		static_cast<u32>(this->y * rhs.y),
+		static_cast<u32>(this->z * rhs.z),
+		static_cast<u32>(this->w * rhs.w)
+	};
 }
 
 Vector4_u32 Vector4_u32::operator / (Vector4_u32 rhs) {
-	return Vector4_u32(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x / rhs.x),
+		static_cast<u32>(this->y / rhs.y),
+		static_cast<u32>(this->z / rhs.z),
+		static_cast<u32>(this->w / rhs.w)
+	};
 }
 
 Vector4_u32 Vector4_u32::operator % (Vector4_u32 rhs) {
-	return Vector4_u32(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z,
-		this->w % rhs.w
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x % rhs.x),
+		static_cast<u32>(this->y % rhs.y),
+		static_cast<u32>(this->z % rhs.z),
+		static_cast<u32>(this->w % rhs.w)
+	};
 }
 
 Vector4_u32 Vector4_u32::operator + (u32 rhs)  {
-	return Vector4_u32(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x + rhs),
+		static_cast<u32>(this->y + rhs),
+		static_cast<u32>(this->z + rhs),
+		static_cast<u32>(this->w + rhs)
+	};
 }
 
 Vector4_u32 Vector4_u32::operator - (u32 rhs) {
-	return Vector4_u32(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x - rhs),
+		static_cast<u32>(this->y - rhs),
+		static_cast<u32>(this->z - rhs),
+		static_cast<u32>(this->w - rhs)
+	};
 }
 
 Vector4_u32 Vector4_u32::operator * (u32 rhs) {
-	return Vector4_u32(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x * rhs),
+		static_cast<u32>(this->y * rhs),
+		static_cast<u32>(this->z * rhs),
+		static_cast<u32>(this->w * rhs)
+	};
 }
 
 Vector4_u32 Vector4_u32::operator / (u32 rhs) {
-	return Vector4_u32(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x / rhs),
+		static_cast<u32>(this->y / rhs),
+		static_cast<u32>(this->z / rhs),
+		static_cast<u32>(this->w / rhs)
+	};
 }
 
 Vector4_u32 Vector4_u32::operator % (u32 rhs) {
-	return Vector4_u32(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs,
-		this->w % rhs
-	);
+	return Vector4_u32 {
+		static_cast<u32>(this->x % rhs),
+		static_cast<u32>(this->y % rhs),
+		static_cast<u32>(this->z % rhs),
+		static_cast<u32>(this->w % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -4524,93 +4524,93 @@ Vector4_s64 & Vector4_s64::operator %= (s64 rhs) {
 }
 
 Vector4_s64 Vector4_s64::operator + (Vector4_s64 rhs) {
-	return Vector4_s64(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x + rhs.x),
+		static_cast<s64>(this->y + rhs.y),
+		static_cast<s64>(this->z + rhs.z),
+		static_cast<s64>(this->w + rhs.w)
+	};
 }
 
 Vector4_s64 Vector4_s64::operator - (Vector4_s64 rhs) {
-	return Vector4_s64(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x - rhs.x),
+		static_cast<s64>(this->y - rhs.y),
+		static_cast<s64>(this->z - rhs.z),
+		static_cast<s64>(this->w - rhs.w)
+	};
 }
 
 Vector4_s64 Vector4_s64::operator * (Vector4_s64 rhs) {
-	return Vector4_s64(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x * rhs.x),
+		static_cast<s64>(this->y * rhs.y),
+		static_cast<s64>(this->z * rhs.z),
+		static_cast<s64>(this->w * rhs.w)
+	};
 }
 
 Vector4_s64 Vector4_s64::operator / (Vector4_s64 rhs) {
-	return Vector4_s64(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x / rhs.x),
+		static_cast<s64>(this->y / rhs.y),
+		static_cast<s64>(this->z / rhs.z),
+		static_cast<s64>(this->w / rhs.w)
+	};
 }
 
 Vector4_s64 Vector4_s64::operator % (Vector4_s64 rhs) {
-	return Vector4_s64(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z,
-		this->w % rhs.w
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x % rhs.x),
+		static_cast<s64>(this->y % rhs.y),
+		static_cast<s64>(this->z % rhs.z),
+		static_cast<s64>(this->w % rhs.w)
+	};
 }
 
 Vector4_s64 Vector4_s64::operator + (s64 rhs)  {
-	return Vector4_s64(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x + rhs),
+		static_cast<s64>(this->y + rhs),
+		static_cast<s64>(this->z + rhs),
+		static_cast<s64>(this->w + rhs)
+	};
 }
 
 Vector4_s64 Vector4_s64::operator - (s64 rhs) {
-	return Vector4_s64(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x - rhs),
+		static_cast<s64>(this->y - rhs),
+		static_cast<s64>(this->z - rhs),
+		static_cast<s64>(this->w - rhs)
+	};
 }
 
 Vector4_s64 Vector4_s64::operator * (s64 rhs) {
-	return Vector4_s64(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x * rhs),
+		static_cast<s64>(this->y * rhs),
+		static_cast<s64>(this->z * rhs),
+		static_cast<s64>(this->w * rhs)
+	};
 }
 
 Vector4_s64 Vector4_s64::operator / (s64 rhs) {
-	return Vector4_s64(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x / rhs),
+		static_cast<s64>(this->y / rhs),
+		static_cast<s64>(this->z / rhs),
+		static_cast<s64>(this->w / rhs)
+	};
 }
 
 Vector4_s64 Vector4_s64::operator % (s64 rhs) {
-	return Vector4_s64(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs,
-		this->w % rhs
-	);
+	return Vector4_s64 {
+		static_cast<s64>(this->x % rhs),
+		static_cast<s64>(this->y % rhs),
+		static_cast<s64>(this->z % rhs),
+		static_cast<s64>(this->w % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -4723,93 +4723,93 @@ Vector4_u64 & Vector4_u64::operator %= (u64 rhs) {
 }
 
 Vector4_u64 Vector4_u64::operator + (Vector4_u64 rhs) {
-	return Vector4_u64(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x + rhs.x),
+		static_cast<u64>(this->y + rhs.y),
+		static_cast<u64>(this->z + rhs.z),
+		static_cast<u64>(this->w + rhs.w)
+	};
 }
 
 Vector4_u64 Vector4_u64::operator - (Vector4_u64 rhs) {
-	return Vector4_u64(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x - rhs.x),
+		static_cast<u64>(this->y - rhs.y),
+		static_cast<u64>(this->z - rhs.z),
+		static_cast<u64>(this->w - rhs.w)
+	};
 }
 
 Vector4_u64 Vector4_u64::operator * (Vector4_u64 rhs) {
-	return Vector4_u64(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x * rhs.x),
+		static_cast<u64>(this->y * rhs.y),
+		static_cast<u64>(this->z * rhs.z),
+		static_cast<u64>(this->w * rhs.w)
+	};
 }
 
 Vector4_u64 Vector4_u64::operator / (Vector4_u64 rhs) {
-	return Vector4_u64(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x / rhs.x),
+		static_cast<u64>(this->y / rhs.y),
+		static_cast<u64>(this->z / rhs.z),
+		static_cast<u64>(this->w / rhs.w)
+	};
 }
 
 Vector4_u64 Vector4_u64::operator % (Vector4_u64 rhs) {
-	return Vector4_u64(
-		this->x % rhs.x,
-		this->y % rhs.y,
-		this->z % rhs.z,
-		this->w % rhs.w
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x % rhs.x),
+		static_cast<u64>(this->y % rhs.y),
+		static_cast<u64>(this->z % rhs.z),
+		static_cast<u64>(this->w % rhs.w)
+	};
 }
 
 Vector4_u64 Vector4_u64::operator + (u64 rhs)  {
-	return Vector4_u64(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x + rhs),
+		static_cast<u64>(this->y + rhs),
+		static_cast<u64>(this->z + rhs),
+		static_cast<u64>(this->w + rhs)
+	};
 }
 
 Vector4_u64 Vector4_u64::operator - (u64 rhs) {
-	return Vector4_u64(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x - rhs),
+		static_cast<u64>(this->y - rhs),
+		static_cast<u64>(this->z - rhs),
+		static_cast<u64>(this->w - rhs)
+	};
 }
 
 Vector4_u64 Vector4_u64::operator * (u64 rhs) {
-	return Vector4_u64(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x * rhs),
+		static_cast<u64>(this->y * rhs),
+		static_cast<u64>(this->z * rhs),
+		static_cast<u64>(this->w * rhs)
+	};
 }
 
 Vector4_u64 Vector4_u64::operator / (u64 rhs) {
-	return Vector4_u64(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x / rhs),
+		static_cast<u64>(this->y / rhs),
+		static_cast<u64>(this->z / rhs),
+		static_cast<u64>(this->w / rhs)
+	};
 }
 
 Vector4_u64 Vector4_u64::operator % (u64 rhs) {
-	return Vector4_u64(
-		this->x % rhs,
-		this->y % rhs,
-		this->z % rhs,
-		this->w % rhs
-	);
+	return Vector4_u64 {
+		static_cast<u64>(this->x % rhs),
+		static_cast<u64>(this->y % rhs),
+		static_cast<u64>(this->z % rhs),
+		static_cast<u64>(this->w % rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -4906,75 +4906,75 @@ Vector4_f32 & Vector4_f32::operator /= (f32 rhs) {
 }
 
 Vector4_f32 Vector4_f32::operator + (Vector4_f32 rhs) {
-	return Vector4_f32(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_f32 {
+		static_cast<f32>(this->x + rhs.x),
+		static_cast<f32>(this->y + rhs.y),
+		static_cast<f32>(this->z + rhs.z),
+		static_cast<f32>(this->w + rhs.w)
+	};
 }
 
 Vector4_f32 Vector4_f32::operator - (Vector4_f32 rhs) {
-	return Vector4_f32(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_f32 {
+		static_cast<f32>(this->x - rhs.x),
+		static_cast<f32>(this->y - rhs.y),
+		static_cast<f32>(this->z - rhs.z),
+		static_cast<f32>(this->w - rhs.w)
+	};
 }
 
 Vector4_f32 Vector4_f32::operator * (Vector4_f32 rhs) {
-	return Vector4_f32(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_f32 {
+		static_cast<f32>(this->x * rhs.x),
+		static_cast<f32>(this->y * rhs.y),
+		static_cast<f32>(this->z * rhs.z),
+		static_cast<f32>(this->w * rhs.w)
+	};
 }
 
 Vector4_f32 Vector4_f32::operator / (Vector4_f32 rhs) {
-	return Vector4_f32(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_f32 {
+		static_cast<f32>(this->x / rhs.x),
+		static_cast<f32>(this->y / rhs.y),
+		static_cast<f32>(this->z / rhs.z),
+		static_cast<f32>(this->w / rhs.w)
+	};
 }
 
 Vector4_f32 Vector4_f32::operator + (f32 rhs)  {
-	return Vector4_f32(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_f32 {
+		static_cast<f32>(this->x + rhs),
+		static_cast<f32>(this->y + rhs),
+		static_cast<f32>(this->z + rhs),
+		static_cast<f32>(this->w + rhs)
+	};
 }
 
 Vector4_f32 Vector4_f32::operator - (f32 rhs) {
-	return Vector4_f32(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_f32 {
+		static_cast<f32>(this->x - rhs),
+		static_cast<f32>(this->y - rhs),
+		static_cast<f32>(this->z - rhs),
+		static_cast<f32>(this->w - rhs)
+	};
 }
 
 Vector4_f32 Vector4_f32::operator * (f32 rhs) {
-	return Vector4_f32(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_f32 {
+		static_cast<f32>(this->x * rhs),
+		static_cast<f32>(this->y * rhs),
+		static_cast<f32>(this->z * rhs),
+		static_cast<f32>(this->w * rhs)
+	};
 }
 
 Vector4_f32 Vector4_f32::operator / (f32 rhs) {
-	return Vector4_f32(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_f32 {
+		static_cast<f32>(this->x / rhs),
+		static_cast<f32>(this->y / rhs),
+		static_cast<f32>(this->z / rhs),
+		static_cast<f32>(this->w / rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -5071,75 +5071,75 @@ Vector4_f64 & Vector4_f64::operator /= (f64 rhs) {
 }
 
 Vector4_f64 Vector4_f64::operator + (Vector4_f64 rhs) {
-	return Vector4_f64(
-		this->x + rhs.x,
-		this->y + rhs.y,
-		this->z + rhs.z,
-		this->w + rhs.w
-	);
+	return Vector4_f64 {
+		static_cast<f64>(this->x + rhs.x),
+		static_cast<f64>(this->y + rhs.y),
+		static_cast<f64>(this->z + rhs.z),
+		static_cast<f64>(this->w + rhs.w)
+	};
 }
 
 Vector4_f64 Vector4_f64::operator - (Vector4_f64 rhs) {
-	return Vector4_f64(
-		this->x - rhs.x,
-		this->y - rhs.y,
-		this->z - rhs.z,
-		this->w - rhs.w
-	);
+	return Vector4_f64 {
+		static_cast<f64>(this->x - rhs.x),
+		static_cast<f64>(this->y - rhs.y),
+		static_cast<f64>(this->z - rhs.z),
+		static_cast<f64>(this->w - rhs.w)
+	};
 }
 
 Vector4_f64 Vector4_f64::operator * (Vector4_f64 rhs) {
-	return Vector4_f64(
-		this->x * rhs.x,
-		this->y * rhs.y,
-		this->z * rhs.z,
-		this->w * rhs.w
-	);
+	return Vector4_f64 {
+		static_cast<f64>(this->x * rhs.x),
+		static_cast<f64>(this->y * rhs.y),
+		static_cast<f64>(this->z * rhs.z),
+		static_cast<f64>(this->w * rhs.w)
+	};
 }
 
 Vector4_f64 Vector4_f64::operator / (Vector4_f64 rhs) {
-	return Vector4_f64(
-		this->x / rhs.x,
-		this->y / rhs.y,
-		this->z / rhs.z,
-		this->w / rhs.w
-	);
+	return Vector4_f64 {
+		static_cast<f64>(this->x / rhs.x),
+		static_cast<f64>(this->y / rhs.y),
+		static_cast<f64>(this->z / rhs.z),
+		static_cast<f64>(this->w / rhs.w)
+	};
 }
 
 Vector4_f64 Vector4_f64::operator + (f64 rhs)  {
-	return Vector4_f64(
-		this->x + rhs,
-		this->y + rhs,
-		this->z + rhs,
-		this->w + rhs
-	);
+	return Vector4_f64 {
+		static_cast<f64>(this->x + rhs),
+		static_cast<f64>(this->y + rhs),
+		static_cast<f64>(this->z + rhs),
+		static_cast<f64>(this->w + rhs)
+	};
 }
 
 Vector4_f64 Vector4_f64::operator - (f64 rhs) {
-	return Vector4_f64(
-		this->x - rhs,
-		this->y - rhs,
-		this->z - rhs,
-		this->w - rhs
-	);
+	return Vector4_f64 {
+		static_cast<f64>(this->x - rhs),
+		static_cast<f64>(this->y - rhs),
+		static_cast<f64>(this->z - rhs),
+		static_cast<f64>(this->w - rhs)
+	};
 }
 
 Vector4_f64 Vector4_f64::operator * (f64 rhs) {
-	return Vector4_f64(
-		this->x * rhs,
-		this->y * rhs,
-		this->z * rhs,
-		this->w * rhs
-	);
+	return Vector4_f64 {
+		static_cast<f64>(this->x * rhs),
+		static_cast<f64>(this->y * rhs),
+		static_cast<f64>(this->z * rhs),
+		static_cast<f64>(this->w * rhs)
+	};
 }
 
 Vector4_f64 Vector4_f64::operator / (f64 rhs) {
-	return Vector4_f64(
-		this->x / rhs,
-		this->y / rhs,
-		this->z / rhs,
-		this->w / rhs
-	);
+	return Vector4_f64 {
+		static_cast<f64>(this->x / rhs),
+		static_cast<f64>(this->y / rhs),
+		static_cast<f64>(this->z / rhs),
+		static_cast<f64>(this->w / rhs)
+	};
 }
 
 //-----------------------------------------------------------------------------
@@ -5626,12 +5626,12 @@ f32 matrix4x4_f32_determinant(Matrix4x4_f32 matrix) {
 	f32 sub_factor_04 =  matrix[2][0] * matrix[3][2]  -  matrix[3][0] * matrix[2][2];
 	f32 sub_factor_05 =  matrix[2][0] * matrix[3][1]  -  matrix[3][0] * matrix[2][1];
 
-	Vector4_f32 determinant_coefficient(
+	Vector4_f32 determinant_coefficient {
 		+ ( matrix[1][1] * sub_factor_00  -  matrix[1][2] * sub_factor_01  +  matrix[1][3] * sub_factor_02 ),
 		- ( matrix[1][0] * sub_factor_00  -  matrix[1][2] * sub_factor_03  +  matrix[1][3] * sub_factor_04 ),
 		+ ( matrix[1][0] * sub_factor_01  -  matrix[1][1] * sub_factor_03  +  matrix[1][3] * sub_factor_05 ),
 		- ( matrix[1][0] * sub_factor_02  -  matrix[1][1] * sub_factor_04  +  matrix[1][2] * sub_factor_05 )
-	);
+	};
 
 	return  matrix[0][0] * determinant_coefficient[0] + matrix[0][1] * determinant_coefficient[1] +
 	        matrix[0][2] * determinant_coefficient[2] + matrix[0][3] * determinant_coefficient[3];
@@ -5916,12 +5916,12 @@ f64 matrix4x4_f64_determinant(Matrix4x4_f64 matrix) {
 	f64 sub_factor_04 =  matrix[2][0] * matrix[3][2]  -  matrix[3][0] * matrix[2][2];
 	f64 sub_factor_05 =  matrix[2][0] * matrix[3][1]  -  matrix[3][0] * matrix[2][1];
 
-	Vector4_f64 determinant_coefficient(
+	Vector4_f64 determinant_coefficient {
 		+ ( matrix[1][1] * sub_factor_00  -  matrix[1][2] * sub_factor_01  +  matrix[1][3] * sub_factor_02 ),
 		- ( matrix[1][0] * sub_factor_00  -  matrix[1][2] * sub_factor_03  +  matrix[1][3] * sub_factor_04 ),
 		+ ( matrix[1][0] * sub_factor_01  -  matrix[1][1] * sub_factor_03  +  matrix[1][3] * sub_factor_05 ),
 		- ( matrix[1][0] * sub_factor_02  -  matrix[1][1] * sub_factor_04  +  matrix[1][2] * sub_factor_05 )
-	);
+	};
 
 	return  matrix[0][0] * determinant_coefficient[0] + matrix[0][1] * determinant_coefficient[1] +
 	        matrix[0][2] * determinant_coefficient[2] + matrix[0][3] * determinant_coefficient[3];

@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-#define GLFW_INCLUDE_VULKAN
+// #define GLFW_INCLUDE_VULKAN
 #include <GLFW/glfw3.h>
 
 #include "qlight.h"
@@ -9,11 +9,13 @@
 // glm::perspective, glm::lookAt
 #include <GLM/gtc/matrix_transform.hpp>
 
+#define ARRAY_SIZE(x) sizeof(x) / sizeof(x[0])
+
 // Sleep()
 #define VC_EXTRALEAN
 #define WIN32_LEAN_AND_MEAN
 #define NOGDI
-#include <Windows.h>
+// #include <Windows.h>
 #undef max
 #undef min
 
@@ -143,12 +145,12 @@ int main(int arguments_count, char *arguments[]) {
 		VkSubmitInfo submit_info = {
 			.sType = VK_STRUCTURE_TYPE_SUBMIT_INFO,
 			.pNext = NULL,
-			.waitSemaphoreCount = ARRAYSIZE(wait_semaphores),
+			.waitSemaphoreCount = ARRAY_SIZE(wait_semaphores),
 			.pWaitSemaphores = wait_semaphores,
 			.pWaitDstStageMask = wait_stages,
 			.commandBufferCount = 1,
 			.pCommandBuffers = &q_command_buffers.command_buffers[image_idx],
-			.signalSemaphoreCount = ARRAYSIZE(signal_semaphores),
+			.signalSemaphoreCount = ARRAY_SIZE(signal_semaphores),
 			.pSignalSemaphores = signal_semaphores
 		};
 
