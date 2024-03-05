@@ -1,14 +1,48 @@
-qlight.out: qlight.o render_vk.o allocator.o math.o
-	clang++ qlight.o render_vk.o allocator.o math.o -L $(VULKAN_SDK)/lib -L libs/GLFW -L libs/GLEW -Wl,-rpath,$(VULKAN_SDK)/lib libvulkan.so libglfw3.a
+SOURCE_DIRECTORY := src
+BUILD_DIRECTORY  := build
+OBJECT_DIRECTORY := $(BUILD_DIRECTORY)/obj
 
-qlight.o: src/qlight.cpp src/qlight.h
-	clang++ -c src/qlight.cpp -I libs -I $(VULKAN_SDK)/include -L $(VULKAN_SDK)/lib -L libs/GLFW -L libs/GLEW -Wl,-rpath,$(VULKAN_SDK)/lib libvulkan.so libglfw3.a
+OUTPUT_EXECUTABLE := $(BUILD_DIRECTORY)/Debug_x64/qlight
+SOURCE_FILES      := $(wildcard $(SOURCE_DIRECTORY)/*.cpp)
+OBJECT_FILES      := $(SOURCE_FILES:$(SOURCE_DIRECTORY)/%.cpp=$(OBJECT_DIRECTORY)/%.o)
 
-render_vk.o: src/render_vk.cpp src/render_vk.h
-	clang++ -c src/render_vk.cpp -I libs -I $(VULKAN_SDK)/include -L $(VULKAN_SDK)/lib -L libs/GLFW -L libs/GLEW -Wl,-rpath,$(VULKAN_SDK)/lib libvulkan.so libglfw3.a
+INCLUDE_PATHS_BY_SPACE := libs $(VULKAN_SDK)/include
+LIBRARY_PATHS_BY_SPACE := libs/GLFW libs/GLEW $(VULKAN_SDK)/lib
 
-allocator.o: src/allocator.cpp src/allocator.h
-	clang++ -c src/allocator.cpp -I libs -I $(VULKAN_SDK)/include -L $(VULKAN_SDK)/lib -L libs/GLFW -L libs/GLEW -Wl,-rpath,$(VULKAN_SDK)/lib libvulkan.so libglfw3.a
+INCLUDE_PATHS_ARGUMENT := $(foreach include_path, $(INCLUDE_PATHS_BY_SPACE), -I $(include_path))
+LIBRARY_PATHS_ARGUMENT := $(foreach library_path, $(LIBRARY_PATHS_BY_SPACE), -L $(library_path))
 
-math.o: src/math.cpp src/math.h
-	clang++ -c src/math.cpp -I libs -I $(VULKAN_SDK)/include-L $(VULKAN_SDK)/lib -L libs/GLFW -L libs/GLEW -Wl,-rpath,$(VULKAN_SDK)/lib libvulkan.so libglfw3.a
+CXX      := clang++
+CXXFLAGS := -Wall
+CPPFLAGS := $(INCLUDE_PATHS_ARGUMENT) -MMD -MP
+LDFLAGS  := $(LIBRARY_PATHS_ARGUMENT)
+LDLIBS   :=
+
+.PHONY: all
+all: $(OUTPUT_EXECUTABLE)
+
+$(OUTPUT_EXECUTABLE): $(OBJECT_FILES) $(BUILD_DIRECTORY) $(OBJECT_DIRECTORY)
+	@echo "Source directory: $(SOURCE_DIRECTORY)"
+	@echo "Build directory: $(BUILD_DIRECTORY)"
+	@echo "Object directory: $(OBJECT_DIRECTORY)"
+	@echo "Output executable: $(OUTPUT_EXECUTABLE)"
+	@echo "Source files: $(SOURCE_FILES)"
+	@echo "Object files: $(OBJECT_FILES)"
+	@echo "Include paths: $(INCLUDE_PATHS_BY_SPACE)"
+	@echo "Library paths: $(LIBRARY_PATHS_BY_SPACE)"
+	@echo "Include paths argument: $(INCLUDE_PATHS_ARGUMENT)"
+	@echo "Library paths argument: $(LIBRARY_PATHS_ARGUNENT)"
+	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+
+$(OBJECT_DIRECTORY) $(BUILD_DIRECTORY):
+	mkdir -p $@
+
+$(OBJECT_DIRECTORY)/%.o: $(SOURCE_DIRECTORY)/%.cpp $(OBJECT_DIRECTORY)
+	$(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+
+.PHONE: clean
+clean:
+	rm -f $(OUTPUT_DIRECTORY)/*.o
+	rm -f $(OUTPUT_EXECUTABLE)
+
+-include $(OBJECT_FILES:.o=.d)
