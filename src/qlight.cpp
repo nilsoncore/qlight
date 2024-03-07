@@ -24,7 +24,7 @@
 #include "allocator.h"
 #include "math.h"
 
-#define RUN_TESTS
+// #define RUN_TESTS
 
 #ifdef RUN_TESTS
 #include "../tests/tests.cpp"

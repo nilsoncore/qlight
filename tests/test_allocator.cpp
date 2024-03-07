@@ -26,8 +26,8 @@ void test_allocator() {
 	memcpy(buffer1, msg1, strlen(msg1)+1);
 	assert(strcmp(buffer1, msg1) == 0);
 
-	printf("1 - buffer1 pointer: 0x%p\n", buffer1);
-	printf("1 - buffer1  string: '%s'\n", buffer1);
+	PRINT("1 - buffer1 pointer: 0x%p\n", buffer1);
+	PRINT("1 - buffer1  string: '%s'\n", buffer1);
 
 	char *buffer2 = ALLOC(a, 32, char);
 	assert(buffer2 != NULL);
@@ -36,9 +36,9 @@ void test_allocator() {
 	memcpy(buffer2, msg2, strlen(msg2)+1);
 	assert(strcmp(buffer2, msg2) == 0);
 
-	printf("2 - buffer2 pointer: 0x%p\n", buffer2);
-	printf("2 - buffer2  string: '%s'\n", buffer2);
-	printf("2 - diff(buffer1, buffer2): %lld\n", (s64)(buffer1 - buffer2));
+	PRINT("2 - buffer2 pointer: 0x%p\n", buffer2);
+	PRINT("2 - buffer2  string: '%s'\n", buffer2);
+	PRINT("2 - diff(buffer1, buffer2): %lld\n", (s64)(buffer1 - buffer2));
 
 	buffer1 = REALLOC(a, buffer1, 32, 64, char);
 	assert(buffer1 != NULL);
@@ -47,9 +47,9 @@ void test_allocator() {
 	memcpy(buffer1, msg3, strlen(msg3)+1);
 	assert(strcmp(buffer1, msg3) == 0);
 
-	printf("3 - buffer1 pointer: 0x%p\n", buffer1);
-	printf("3 - buffer1  string: '%s'\n", buffer1);
-	printf("3 - diff(buffer1, buffer2): %lld\n", (s64)(buffer1 - buffer2));
+	PRINT("3 - buffer1 pointer: 0x%p\n", buffer1);
+	PRINT("3 - buffer1  string: '%s'\n", buffer1);
+	PRINT("3 - diff(buffer1, buffer2): %lld\n", (s64)(buffer1 - buffer2));
 
 	linear_allocator.clear(false);
 	assert(linear_allocator.occupied() == 0);

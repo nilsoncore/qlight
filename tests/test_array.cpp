@@ -3,23 +3,31 @@
 #include "../src/array.h"
 
 void test_array() {
-	Array<char> str1 = array_new<char>(sys_allocator, (s64)(2+1));
+	Array<char> str1 = array_new<char>(sys_allocator, 5);
 	assert(array_add(&str1, 'h'));
-	assert(array_add(&str1, 'i'));
-	assert(array_add(&str1, '\0'));
-	assert(!array_add(&str1, 'm'));
+	assert(array_add(&str1, 'e'));
+	assert(array_add(&str1, 'l'));
+	assert(array_add(&str1, 'l'));
+	assert(array_add(&str1, 'o'));
+	// assert(array_add(&str1, '\0'));
+	assert(!array_add(&str1, ' '));
 
-	printf("1 - str1: '%s'\n", str1.data);
+	PRINT("1 - str1: '%s'\n", str1.data);
 
-	array_resize(&str1, 6+1);
-	str1.data[str1.size-1] = ' ';
-	assert(array_add(&str1, 'm'));
-	assert(array_add(&str1, 'a'));
-	assert(array_add(&str1, 'n'));
-	assert(array_add(&str1, '\0'));
-	assert(!array_add(&str1, 's'));
+	// str1.data[str1.size-1] = ' ';
+	array_resize(&str1, str1.size + 8);
+	assert(array_add(&str1, ' '));
+	assert(array_add(&str1, 'w'));
+	assert(array_add(&str1, 'o'));
+	assert(array_add(&str1, 'r'));
+	assert(array_add(&str1, 'l'));
+	assert(array_add(&str1, 'd'));
+	assert(array_add(&str1, '!'));
+	assert(array_add(&str1, '\n'));
+	// assert(array_add(&str1, '\0'));
+	assert(!array_add(&str1, ' '));
 
-	printf("2 - str1: '%s'\n", str1.data);
+	PRINT("2 - str1: '%s'\n", str1.data);
 
-	array_clear(&str1);
+	array_free(&str1);
 }
