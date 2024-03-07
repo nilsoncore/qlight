@@ -1,48 +1,51 @@
+PROJECT_NAME     := qlight
 SOURCE_DIRECTORY := src
 BUILD_DIRECTORY  := build
-OBJECT_DIRECTORY := $(BUILD_DIRECTORY)/obj
+OUTPUT_DIRECTORY := $(BUILD_DIRECTORY)/makefile_$(PROJECT_NAME)_Debug_x64
+OBJECT_DIRECTORY := $(OUTPUT_DIRECTORY)_obj
 
-OUTPUT_EXECUTABLE := $(BUILD_DIRECTORY)/Debug_x64/qlight
+INCLUDE_PATHS_BY_SPACE := libs
+LIBRARY_PATHS_BY_SPACE := libs/GLFW/linux
+LIBRARIES_BY_SPACE     := glfw3 vulkan
+
+
+OUTPUT_EXECUTABLE := $(OUTPUT_DIRECTORY)/$(PROJECT_NAME)
 SOURCE_FILES      := $(wildcard $(SOURCE_DIRECTORY)/*.cpp)
 OBJECT_FILES      := $(SOURCE_FILES:$(SOURCE_DIRECTORY)/%.cpp=$(OBJECT_DIRECTORY)/%.o)
 
-INCLUDE_PATHS_BY_SPACE := libs $(VULKAN_SDK)/include
-LIBRARY_PATHS_BY_SPACE := libs/GLFW libs/GLEW $(VULKAN_SDK)/lib
+INCLUDE_PATHS := $(foreach include_path, $(INCLUDE_PATHS_BY_SPACE), -I $(include_path))
+LIBRARY_PATHS := $(foreach library_path, $(LIBRARY_PATHS_BY_SPACE), -L $(library_path))
+LIBRARIES     := $(foreach library, $(LIBRARIES_BY_SPACE), -l $(library))
 
-INCLUDE_PATHS_ARGUMENT := $(foreach include_path, $(INCLUDE_PATHS_BY_SPACE), -I $(include_path))
-LIBRARY_PATHS_ARGUMENT := $(foreach library_path, $(LIBRARY_PATHS_BY_SPACE), -L $(library_path))
 
-CXX      := clang++
-CXXFLAGS := -Wall
-CPPFLAGS := $(INCLUDE_PATHS_ARGUMENT) -MMD -MP
-LDFLAGS  := $(LIBRARY_PATHS_ARGUMENT)
-LDLIBS   :=
+CPP_COMPILER        := clang++
+CPP_COMPILER_FLAGS  :=
+PREPROCESSOR_FLAGS  := $(INCLUDE_PATHS) -MMD -MP
+LD_LINKER_FLAGS     := $(LIBRARY_PATHS) -g -gdwarf
+LD_LINKER_LIBRARIES := $(LIBRARIES)
 
-.PHONY: all
-all: $(OUTPUT_EXECUTABLE)
 
-$(OUTPUT_EXECUTABLE): $(OBJECT_FILES) $(BUILD_DIRECTORY) $(OBJECT_DIRECTORY)
-	@echo "Source directory: $(SOURCE_DIRECTORY)"
-	@echo "Build directory: $(BUILD_DIRECTORY)"
-	@echo "Object directory: $(OBJECT_DIRECTORY)"
-	@echo "Output executable: $(OUTPUT_EXECUTABLE)"
-	@echo "Source files: $(SOURCE_FILES)"
-	@echo "Object files: $(OBJECT_FILES)"
-	@echo "Include paths: $(INCLUDE_PATHS_BY_SPACE)"
-	@echo "Library paths: $(LIBRARY_PATHS_BY_SPACE)"
-	@echo "Include paths argument: $(INCLUDE_PATHS_ARGUMENT)"
-	@echo "Library paths argument: $(LIBRARY_PATHS_ARGUNENT)"
-	$(CXX) $(LDFLAGS) $^ $(LDLIBS) -o $@
+.PHONY: debug
+debug: $(OUTPUT_EXECUTABLE)
 
-$(OBJECT_DIRECTORY) $(BUILD_DIRECTORY):
+$(OUTPUT_EXECUTABLE): $(OBJECT_FILES) | $(OBJECT_DIRECTORY) $(OUTPUT_DIRECTORY) copy_resources
+	$(CPP_COMPILER) $(LD_LINKER_FLAGS) $^ $(LD_LINKER_LIBRARIES) -o $@
+
+$(OBJECT_DIRECTORY) $(BUILD_DIRECTORY) $(OUTPUT_DIRECTORY):
 	mkdir -p $@
 
 $(OBJECT_DIRECTORY)/%.o: $(SOURCE_DIRECTORY)/%.cpp $(OBJECT_DIRECTORY)
-	$(CXX) $(CPPFLAGS) $(CFLAGS) -c $< -o $@
+	$(CPP_COMPILER) $(PREPROCESSOR_FLAGS) $(CPP_COMPILER_FLAGS) -c $< -o $@
 
-.PHONE: clean
+
+.PHONY: copy_resources
+copy_resources:
+	cp -r resources $(OUTPUT_DIRECTORY)
+
+
+.PHONY: clean
 clean:
-	rm -f $(OUTPUT_DIRECTORY)/*.o
+	rm -f $(OBJECT_DIRECTORY)/*.o
 	rm -f $(OUTPUT_EXECUTABLE)
 
 -include $(OBJECT_FILES:.o=.d)
