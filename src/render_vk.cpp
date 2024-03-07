@@ -19,7 +19,7 @@
     {                               \
         VkResult error = x;         \
         if (error != VK_SUCCESS) {  \
-            printf("Vulkan ERROR:\n\tSite: %s (%s:%d)\n\tError: %lu\n", #x, __FILE__, __LINE__, error); \
+            printf("Vulkan ERROR:\n\tSite: %s (%s:%d)\n\tError: %d\n", #x, __FILE__, __LINE__, error); \
             abort();                \
         }                           \
     } while (0)

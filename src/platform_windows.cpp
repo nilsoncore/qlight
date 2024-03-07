@@ -1,3 +1,4 @@
+#if defined(_WIN32)
 #define WIN32_LEAN_AND_MEAN
 #define NOGDI
 #include <Windows.h>
@@ -34,3 +35,5 @@ void platform_handle_assert(const char *expression, const char *message, const c
 		}
 	}
 }
+
+#endif /* _WIN32 */
