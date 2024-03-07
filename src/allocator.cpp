@@ -27,11 +27,15 @@ void Allocator::request_free(void *memory_pointer, CallerInfo caller) {
 }
 
 u8 *System_Allocator::do_allocate(u64 count, u64 size, CallerInfo caller) {
-	return (u8 *) malloc(size);
+	return (u8 *) malloc(count * size);
 }
 
 u8 *System_Allocator::do_reallocate(void *memory_pointer, u64 old_count, u64 new_count, u64 size, CallerInfo caller) {
 	return (u8 *) realloc(memory_pointer, new_count * size);
+	// u8 *allocated = do_allocate(new_count, size, caller);
+	// memcpy(allocated, memory_pointer, old_count * size);
+	// do_free(memory_pointer, caller);
+	// return allocated;
 }
 
 void System_Allocator::do_free(void *memory_pointer, CallerInfo caller) {
