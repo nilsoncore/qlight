@@ -125,6 +125,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <SupportJustMyCode>false</SupportJustMyCode>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -160,6 +161,7 @@
   <ItemGroup>
     <ClCompile Include="..\src\allocator.cpp" />
     <ClCompile Include="..\src\math.cpp" />
+    <ClCompile Include="..\src\platform_windows.cpp" />
     <ClCompile Include="qlight_tests.cpp" />
     <ClCompile Include="test_allocator.cpp" />
     <ClCompile Include="test_array.cpp" />

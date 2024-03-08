@@ -5,6 +5,8 @@
 #include <string.h>
 #include <assert.h>
 
+#include "../src/platform.h"
+
 #define QLIGHT_TESTS_PRINT
 
 #define PRINT_ALWAYS(...) printf("[" __FUNCTION__ "] " __VA_ARGS__)
@@ -15,7 +17,7 @@
 #define PRINT(...)
 #endif
 
-#define ASSERT(expression, message) 
+#define ASSERT(expression, message) if (!(expression)) { platform_assert_fail(#expression, message, __FILE__, __LINE__); }
 
 void test_allocator();
 void test_array();

@@ -3,6 +3,9 @@
 #include "../src/allocator.h"
 
 void test_allocator() {
+// 	assert(false);
+	ASSERT(false, "lol");
+
 	char *buffer = ALLOC(sys_allocator, 16, char);
 	assert(buffer != NULL);
 

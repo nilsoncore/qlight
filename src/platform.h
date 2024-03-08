@@ -3,6 +3,6 @@
 
 #include "types.h"
 
-void platform_handle_assert(const char *expression, const char *message, const char *file, u32 line);
+void platform_assert_fail(const char *expression, const char *message, const char *file, long line);
 
 #endif /* QLIGHT_PLATFORM_H */
