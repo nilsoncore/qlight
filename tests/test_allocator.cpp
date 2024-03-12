@@ -2,58 +2,63 @@
 
 #include "../src/allocator.h"
 
+template <typename T>
+void T_test(T value) {
+	TestPrint("T: %s\n", get_type_name<T>());
+}
+
 void test_allocator() {
-// 	assert(false);
-	ASSERT(false, "lol");
+	int8_t T_test_value = 'Q';
+	T_test(T_test_value);
 
-	char *buffer = ALLOC(sys_allocator, 16, char);
-	assert(buffer != NULL);
+	char *buffer = Allocate(sys_allocator, 16, char);
+	TestAssertMessage(buffer != NULL, "Failed to heap allocate buffer memory.");
 
-	buffer = REALLOC(sys_allocator, buffer, 16, 32, char);
-	assert(buffer != NULL);
+	buffer = Reallocate(sys_allocator, buffer, 16, 32, char);
+	TestAssertMessage(buffer != NULL, "Failed to heap reallocate buffer memory.");
 
-	FREE(sys_allocator, buffer);
+	Deallocate(sys_allocator, buffer);
 
 	Linear_Allocator linear_allocator;
-	u8 *arena_memory = ALLOC(sys_allocator, 1024, u8);
-	assert(arena_memory != NULL);
+	u8 *arena_memory = Allocate(sys_allocator, 1024, u8);
+	TestAssertMessage(arena_memory != NULL, "Failed to heap allocate buffer memory for linear allocator.");
 
 	linear_allocator.init(arena_memory, 1024);
 
 	Allocator *a = &linear_allocator;
 
-	char *buffer1 = ALLOC(a, 32, char);
-	assert(buffer1 != NULL);
+	char *buffer1 = Allocate(a, 32, char);
+	TestAssertMessage(buffer1 != NULL, "Failed to linear allocate buffer memory.");
 
 	const char *msg1 = "Hello, world!";
 	memcpy(buffer1, msg1, strlen(msg1)+1);
-	assert(strcmp(buffer1, msg1) == 0);
+	TestAssertMessage(strcmp(buffer1, msg1) == 0, "Failed to copy string into linear allocated buffer memory.");
 
-	PRINT("1 - buffer1 pointer: 0x%p\n", buffer1);
-	PRINT("1 - buffer1  string: '%s'\n", buffer1);
+	TestPrint("1 - buffer1 pointer: 0x%p\n", buffer1);
+	TestPrint("1 - buffer1  string: '%s'\n", buffer1);
 
-	char *buffer2 = ALLOC(a, 32, char);
-	assert(buffer2 != NULL);
+	char *buffer2 = Allocate(a, 32, char);
+	TestAssertMessage(buffer2 != NULL, "Failed to linear allocate buffer memory.");
 
 	const char *msg2 = "Goodbye, sadness!";
 	memcpy(buffer2, msg2, strlen(msg2)+1);
-	assert(strcmp(buffer2, msg2) == 0);
+	TestAssertMessage(strcmp(buffer2, msg2) == 0, "Failed to copy string into linear allocated buffer memory.");
 
-	PRINT("2 - buffer2 pointer: 0x%p\n", buffer2);
-	PRINT("2 - buffer2  string: '%s'\n", buffer2);
-	PRINT("2 - diff(buffer1, buffer2): %lld\n", (s64)(buffer1 - buffer2));
+	TestPrint("2 - buffer2 pointer: 0x%p\n", buffer2);
+	TestPrint("2 - buffer2  string: '%s'\n", buffer2);
+	TestPrint("2 - diff(buffer1, buffer2): %lld\n", (s64)(buffer1 - buffer2));
 
-	buffer1 = REALLOC(a, buffer1, 32, 64, char);
-	assert(buffer1 != NULL);
+	buffer1 = Reallocate(a, buffer1, 32, 64, char);
+	TestAssertMessage(buffer1 != NULL, "Failed to linear reallocate buffer memory.");
 
 	const char *msg3 = "What's up, people!";
 	memcpy(buffer1, msg3, strlen(msg3)+1);
-	assert(strcmp(buffer1, msg3) == 0);
+	TestAssertMessage(strcmp(buffer1, msg3) == 0, "Failed to copy string into linear reallocated buffer memory.");
 
-	PRINT("3 - buffer1 pointer: 0x%p\n", buffer1);
-	PRINT("3 - buffer1  string: '%s'\n", buffer1);
-	PRINT("3 - diff(buffer1, buffer2): %lld\n", (s64)(buffer1 - buffer2));
+	TestPrint("3 - buffer1 pointer: 0x%p\n", buffer1);
+	TestPrint("3 - buffer1  string: '%s'\n", buffer1);
+	TestPrint("3 - diff(buffer1, buffer2): %lld\n", (s64)(buffer1 - buffer2));
 
-	linear_allocator.clear(false);
-	assert(linear_allocator.occupied() == 0);
+	linear_allocator.reset(false);
+	TestAssertMessage(linear_allocator.occupied() == 0, "Failed to reset linear allocator memory.");
 }

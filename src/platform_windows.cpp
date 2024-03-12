@@ -17,8 +17,7 @@ void platform_assert_fail(const char *expression, const char *message, const cha
 	char text[buffer_size];
 	size_t cursor = 0;
 	cursor += snprintf(
-		text,
-		buffer_size,
+		text, buffer_size,
 		"%s!\n"
 		"Expression: %s\n"
 		"Message: %s\n"
@@ -33,7 +32,7 @@ void platform_assert_fail(const char *expression, const char *message, const cha
 		return;
 	}
 
-	const char attach[] = 
+	const char attach[] =
 		"\n"
 		"Attach a debugger to the process and press \"Retry\" to start debugging, or press \"Cancel\" to close the program.";
 	const size_t attach_length = sizeof(attach);

@@ -4,31 +4,33 @@
 #include "types.h"
 #include "allocator.h"
 
-template<typename T>
+template <typename T>
 struct Array {
 	Allocator *allocator;
-	u64 size;
-	u64 capacity;
+	u32 size;
+	u32 capacity;
 	T *data;
 };
 
 template <typename T>
-Array<T> array_new(Allocator *allocator, u64 initial_capacity) {
+struct ArrayView {
+	u32 size;
+	T *data;
+};
+
+template <typename T>
+Array<T> array_new(Allocator *allocator, u32 initial_capacity) {
 	Array<T> array;
 	array.allocator = allocator;
 	array.size = 0;
 	array.capacity = initial_capacity;
-	if (initial_capacity > 0) {
-		array.data = ALLOC(allocator, array.capacity, T);
-	} else {
-		array.data = NULL;
-	}
+	array.data = (initial_capacity > 0) ? TemplateAllocate(allocator, array.capacity, T) : NULL;
 	return array;
 }
 
 template <typename T>
-u64 array_resize(Array<T> *array, u64 new_capacity) {
-	array->data = REALLOC(array->allocator, array->data, array->capacity, new_capacity, T);
+u32 array_resize(Array<T> *array, u32 new_capacity) {
+	array->data = TemplateReallocate(array->allocator, array->data, array->capacity, new_capacity, T);
 	array->capacity = new_capacity;
 	return array->capacity;
 }
@@ -62,7 +64,7 @@ bool array_free(Array<T> *array) {
     if (!array->data)         return false;
     if (array->capacity < 1)  return false;
 
-    FREE(array->allocator, array->data);
+    Deallocate(array->allocator, array->data);
     array->size = 0;
     array->capacity = 0;
     return true;

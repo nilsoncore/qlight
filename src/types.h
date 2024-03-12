@@ -33,4 +33,40 @@ typedef uint64_t  u64;
 typedef    float  f32;
 typedef   double  f64;
 
+template <typename T>
+inline const char *get_type_name() { return "(unknown)"; }
+
+template < >
+inline const char *get_type_name<char>() { return "char"; }
+
+template < >
+inline const char *get_type_name<s8>() { return "s8"; }
+
+template < >
+inline const char *get_type_name<s16>() { return "s16"; }
+
+template < >
+inline const char *get_type_name<s32>() { return "s32"; }
+
+template < >
+inline const char *get_type_name<s64>() { return "s64"; }
+
+template < >
+inline const char *get_type_name<u8>() { return "u8"; }
+
+template < >
+inline const char *get_type_name<u16>() { return "u16"; }
+
+template < >
+inline const char *get_type_name<u32>() { return "u32"; }
+
+template < >
+inline const char *get_type_name<u64>() { return "u64"; }
+
+template < >
+inline const char *get_type_name<f32>() { return "f32"; }
+
+template < >
+inline const char *get_type_name<f64>() { return "f64"; }
+
 #endif /* QLIGHT_TYPES_H */

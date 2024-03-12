@@ -1,5 +1,4 @@
 #include <stdlib.h> // malloc(), realloc(), free()
-#include <assert.h> // assert()
 #include <string.h>
 
 #include "allocator.h"
@@ -7,23 +6,25 @@
 #undef max
 #define max(a, b) (a > b) ? a : b
 
-static System_Allocator __sys_allocator;
-Allocator *sys_allocator = &__sys_allocator;
+static System_Allocator g_qlight_sys_allocator;
+Allocator *sys_allocator = &g_qlight_sys_allocator;
 
 u8 *Allocator::request_allocate(u64 count, u64 size, CallerInfo caller) {
 	u8 *allocated = do_allocate(count, size, caller);
-	assert(allocated != NULL && "Failed to allocate.");
+	AssertMessage(allocated, "Failed to allocate");
 	return allocated;
 }
 
 u8 *Allocator::request_reallocate(void *memory_pointer, u64 old_count, u64 new_count, u64 size, CallerInfo caller) {
+	AssertMessage(memory_pointer, "Memory pointer is NULL");
 	u8 *reallocated = do_reallocate(memory_pointer, old_count, new_count, size, caller);
-	assert(reallocated != NULL && "Failed to reallocate.");
+	AssertMessage(reallocated, "Failed to reallocate");
 	return reallocated;
 }
 
-void Allocator::request_free(void *memory_pointer, CallerInfo caller) {
-	do_free(memory_pointer, caller);
+void Allocator::request_deallocate(void *memory_pointer, CallerInfo caller) {
+	AssertMessage(memory_pointer, "Memory pointer is NULL");
+	do_deallocate(memory_pointer, caller);
 }
 
 u8 *System_Allocator::do_allocate(u64 count, u64 size, CallerInfo caller) {
@@ -38,7 +39,7 @@ u8 *System_Allocator::do_reallocate(void *memory_pointer, u64 old_count, u64 new
 	// return allocated;
 }
 
-void System_Allocator::do_free(void *memory_pointer, CallerInfo caller) {
+void System_Allocator::do_deallocate(void *memory_pointer, CallerInfo caller) {
 	free(memory_pointer);
 }
 
@@ -52,7 +53,7 @@ static bool power_of_2(u64 x) {
 }
 
 void Linear_Allocator::init(void *memory_pointer, u64 size) {
-    assert(memory_pointer != NULL && "Trying to initialize 'Linear_Allocator' with NULL pointer.");
+    AssertMessage(memory_pointer, "Trying to initialize 'Linear_Allocator' with NULL pointer");
 
     memory_start = (u8 *)memory_pointer;
     memory_end = memory_start + size;
@@ -63,15 +64,15 @@ void Linear_Allocator::init(void *memory_pointer, u64 size) {
 }
 
 void Linear_Allocator::deinit() {
-    assert(memory_start != NULL && "Allocator is not initialized or already deinitialized.");
+    AssertMessage(memory_start, "Allocator is not initialized or already deinitialized");
     free(memory_start);
 
     memory_start = NULL;
     memory_end = NULL;
 }
 
-void Linear_Allocator::clear(bool zero_memory) {
-    assert(memory_start != NULL && "Allocator is not initialized or already deinitialized.");
+void Linear_Allocator::reset(bool zero_memory) {
+    AssertMessage(memory_start, "Allocator is not initialized or already deinitialized");
     cursor = memory_start;
     // maybe keep max usage info on clear?
     // cursor_max = cursor;
@@ -84,7 +85,7 @@ u64 Linear_Allocator::occupied() {
 }
 
 u8 *Linear_Allocator::do_allocate(u64 count, u64 size, CallerInfo caller) {
-    assert(power_of_2(size) && "Allocation size (alignment) must be power of 2.");
+    AssertMessage(power_of_2(size), "Allocation size (alignment) must be power of 2");
     u8 *aligned = (u8 *)(((u64)(cursor + size - 1)) & ~(size - 1));
     if (aligned + count > memory_end)  return NULL;
 
@@ -100,7 +101,7 @@ u8 *Linear_Allocator::do_reallocate(void *memory_pointer, u64 old_count, u64 new
         u8 *new_cursor = cursor - old_count + new_count;
 
         if (new_cursor > memory_end)  return NULL;
-        if (new_cursor < cursor)      assert(false && "New cursor is below the current cursor for some reason.");
+        AssertMessage(new_cursor < cursor, "New cursor is below the current cursor for some reason");
 
         cursor = new_cursor;
         cursor_max = max(cursor, cursor_max);
@@ -114,11 +115,11 @@ u8 *Linear_Allocator::do_reallocate(void *memory_pointer, u64 old_count, u64 new
     return new_memory_pointer;
 }
 
-void Linear_Allocator::do_free(void *memory_pointer, CallerInfo caller) {
+void Linear_Allocator::do_deallocate(void *memory_pointer, CallerInfo caller) {
     if (!memory_pointer) {
-        clear(false);
+        reset(false);
         return;
     }
 
-    assert(false && "Trying to deallocate with 'Linear_Allocator'.");
+    AssertMessage(false, "Trying to deallocate with 'Linear_Allocator'");
 }
