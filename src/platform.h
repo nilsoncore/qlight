@@ -38,6 +38,6 @@
 	#define AssertMessage(expression, message)
 #endif
 
-void platform_assert_fail(const char *expression, const char *message, const char *file, long line);
+extern "C" void platform_assert_fail(const char *expression, const char *message, const char *file, long line);
 
 #endif /* QLIGHT_PLATFORM_H */

@@ -23,6 +23,7 @@
 
 #pragma warning ( disable : 26812 )
 
+#include "platform.h"
 #include "allocator.h"
 #include "math.h"
 

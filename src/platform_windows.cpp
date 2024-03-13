@@ -1,4 +1,3 @@
-#if defined(_WIN32)
 #define _CRT_SECURE_NO_WARNINGS
 
 #include "platform.h"
@@ -10,6 +9,7 @@
 #include <Windows.h>
 
 void platform_assert_fail(const char *expression, const char *message, const char *file, long line) {
+	printf("assert WINDOWS\n");
 	const char title[] = "Assertion failed";
 	const size_t title_length_minus_1 = sizeof(title) - 1;
 
@@ -64,5 +64,3 @@ void platform_assert_fail(const char *expression, const char *message, const cha
 		}
 	}
 }
-
-#endif /* _WIN32 */
