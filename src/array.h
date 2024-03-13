@@ -28,6 +28,17 @@ Array<T> array_new(Allocator *allocator, u32 initial_capacity) {
 	return array;
 }
 
+// count = 0 -- means count to the end of the array (its size).
+template <typename T>
+ArrayView<T> get_array_view(Array<T> *array, u32 offset = 0, u32 count = 0) {
+	AssertMessage(array, "ArrayView array pointer is NULL");
+	T *view_data = array->data + offset;
+	const u32 view_size = (count == 0) ? array->size - offset : count;
+	AssertMessage(view_size <= array->size, "ArrayView size is out of bounds");
+	ArrayView<T> view = { .size = view_size, .data = view_data };
+	return view;
+}
+
 template <typename T>
 u32 array_resize(Array<T> *array, u32 new_capacity) {
 	array->data = TemplateReallocate(array->allocator, array->data, array->capacity, new_capacity, T);
