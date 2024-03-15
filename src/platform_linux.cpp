@@ -18,6 +18,6 @@ void platform_assert_fail(const char *expression, const char *message, const cha
 		title, expression, message, file, line
 	);
 
-	fputs(text, stderr);
-	exit(EXIT_FAILURE);
+	fwrite(text, sizeof(char), cursor, stderr);
+	exit(EXIT_FAILURE); // TODO(nilsoncore): Cause a debug breakpoint instead.
 }
