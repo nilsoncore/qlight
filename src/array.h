@@ -4,6 +4,11 @@
 #include "types.h"
 #include "allocator.h"
 
+#define ARRAY_RESIZE_MIN_CAPACITY 64
+
+#define StringViewFormat "%.*s"
+#define StringViewArgument(array_view) array_view.size, array_view.data
+
 template <typename T>
 struct Array {
 	Allocator *allocator;
@@ -32,6 +37,7 @@ Array<T> array_new(Allocator *allocator, u32 initial_capacity) {
 template <typename T>
 ArrayView<T> get_array_view(Array<T> *array, u32 offset = 0, u32 count = 0) {
 	AssertMessage(array, "ArrayView array pointer is NULL");
+	// AssertMessage(offset < array->size, "ArrayView array offset is out of bounds");
 	T *view_data = array->data + offset;
 	const u32 view_size = (count == 0) ? array->size - offset : count;
 	AssertMessage(view_size <= array->size, "ArrayView size is out of bounds");
@@ -39,20 +45,45 @@ ArrayView<T> get_array_view(Array<T> *array, u32 offset = 0, u32 count = 0) {
 	return view;
 }
 
+#if defined(QLIGHT_MATH_H)
+u32 QL_max2(u32 a, u32 b); // from math.h
+#else
+static u32 QL_max2(u32 a, u32 b) { return (a > b) ? a : b; }
+#endif
+
 template <typename T>
 u32 array_resize(Array<T> *array, u32 new_capacity) {
+	if (new_capacity <= array->size) {
+		// Shrink down the size, but keep capacity the same.
+		array->size = new_capacity;
+		return array->capacity;
+	}
+
+	if (new_capacity <= array->capacity) {
+		// Shrink down the size, but keep capacity the same.
+		array->size = new_capacity;
+		return array->capacity;
+	}
+
+	// Allocate at least N items.
+	// NOTE(nilsoncore): Check if this optimisation is worth it.
+	new_capacity = QL_max2(static_cast<u32>(ARRAY_RESIZE_MIN_CAPACITY), new_capacity);
 	array->data = TemplateReallocate(array->allocator, array->data, array->capacity, new_capacity, T);
 	array->capacity = new_capacity;
 	return array->capacity;
 }
 
+// Returns newly added item's index.
 template <typename T>
-bool array_add(Array<T> *array, T item) {
-    if (array->size + 1 > array->capacity)  return false;
+u32 array_add(Array<T> *array, T item) {
+    if (array->size + 1 > array->capacity) {
+    	array_resize(array, array->size * 2);
+    }
 
     array->data[array->size] = item;
+    const u32 current_idx = array->size;
     array->size++;
-    return true;
+    return array->size - 1;
 }
 
 template <typename T>
@@ -73,7 +104,7 @@ u32 array_add_repeat(Array<T> *array, T item, u32 count) {
 
 template <typename T>
 u32 array_add_from_array(Array<T> *destination, Array<T> *source, u32 source_offset, u32 count) {
-	const bool within_source_array = (source->size <= source_offset + count);
+	const bool within_source_array = (source->size >= source_offset + count);
 	const u32 source_items_to_add = (within_source_array) ? count : source->size - source_offset - count;
 	if (source_items_to_add < 1)
 		return source_items_to_add;
@@ -102,7 +133,7 @@ bool array_pop(Array<T> *array, T *out_item) {
     	return false;
 
     if (out_item)
-    	*out_item = array->data[array->size];
+    	*out_item = array->data[array->size - 1];
 
     array->size--;
     return true;
