@@ -1,4 +1,4 @@
-#define QLIGHT_DEBUG
+// #define QLIGHT_DEBUG
 
 #include "tests_common.h"
 
@@ -198,19 +198,70 @@ void test_array() {
 
 	TestPrint("Creating new ArrayView of str2... (array: %p, offset: %u, count: %u)\n", &str2, offset, count);
 
-	// FIXME(nilsoncore): TODO(niloncore): Catch overflow.
 	ArrayView<char> str2_view_overflow_offset = get_array_view(&str2, offset, count);
 
 	TestPrint("str2_view_overflow_offset.data: %p (expected: %p)\n", str2_view_overflow_offset.data, str2.data + offset);
 	TestAssert(str2_view_overflow_offset.data == str2.data + offset);
 
-	TestPrint("str2_view_overflow_offset.size: %u (expected: %u)\n", str2_view_overflow_offset.size, count);
-	TestAssert(str2_view_overflow_offset.size == count);
+	TestPrint("str2_view_overflow_offset.size: %u (expected: %u)\n", str2_view_overflow_offset.size, 0);
+	TestAssert(str2_view_overflow_offset.size == 0);
 
 	TestPrint("str2_view_overflow_offset.data: \"");
 	TestWrite(str2_view_overflow_offset.data, str2_view_overflow_offset.size);
 	TestPrintPrefixed("", "\" (expected: \"");
-	TestWrite(str2.data + offset, count);
+	TestWrite(str2.data + offset, 0);
+	TestPrintPrefixed("", "\")\n\n");
+
+	//         0 0 0 0 0 0 0 0 0 0 1 1
+	// Offset: 0 1 2 3 4 5 6 7 8 9 0 1
+	// String: R u n n i n g _ i n _ c i r c l e s _ _
+	//  Count:                       1 2 3 4 5 6 7 8 9
+	const u32 count_overflow_offset = 11;
+	const u32 count_overflow_count = 9;
+
+	offset = count_overflow_offset;
+	count = count_overflow_count;
+
+	TestPrint("Creating new ArrayView of str2... (array: %p, offset: %u, count: %u)\n", &str2, offset, count);
+
+	ArrayView<char> str2_view_overflow_count = get_array_view(&str2, offset, count);
+
+	TestPrint("str2_view_overflow_count.data: %p (expected: %p)\n", str2_view_overflow_count.data, str2.data + offset);
+	TestAssert(str2_view_overflow_count.data == str2.data + offset);
+
+	TestPrint("str2_view_overflow_count.size: %u (expected: %u)\n", str2_view_overflow_count.size, 7);
+	TestAssert(str2_view_overflow_count.size == 7);
+
+	TestPrint("str2_view_overflow_count.data: \"");
+	TestWrite(str2_view_overflow_count.data, str2_view_overflow_count.size);
+	TestPrintPrefixed("", "\" (expected: \"");
+	TestWrite(str2.data + offset, 7);
+	TestPrintPrefixed("", "\")\n\n");
+
+	//         0 0 0 0 0 0 0 0 0 0 1 1 1 1 1 1 1 1
+	// Offset: 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7
+	// String: R u n n i n g _ i n _ c i r c l e s _ _
+	//  Count:                                   1 2 3
+	const u32 count_end_overflow_offset = 17;
+	const u32 count_end_overflow_count = 3;
+
+	offset = count_end_overflow_offset;
+	count = count_end_overflow_count;
+
+	TestPrint("Creating new ArrayView of str2... (array: %p, offset: %u, count: %u)\n", &str2, offset, count);
+
+	ArrayView<char> str2_view_overflow_count_end = get_array_view(&str2, offset, count);
+
+	TestPrint("str2_view_overflow_count_end.data: %p (expected: %p)\n", str2_view_overflow_count_end.data, str2.data + offset);
+	TestAssert(str2_view_overflow_count_end.data == str2.data + offset);
+
+	TestPrint("str2_view_overflow_count_end.size: %u (expected: %u)\n", str2_view_overflow_count_end.size, 1);
+	TestAssert(str2_view_overflow_count_end.size == 1);
+
+	TestPrint("str2_view_overflow_count_end.data: \"");
+	TestWrite(str2_view_overflow_count_end.data, str2_view_overflow_count_end.size);
+	TestPrintPrefixed("", "\" (expected: \"");
+	TestWrite(str2.data + offset, 1);
 	TestPrintPrefixed("", "\")\n");
 
 
@@ -275,7 +326,7 @@ void test_array() {
 	TestPrint("Last item of str1: '%c'\n", stored_last_char);
 	TestPrint("Popping last item from str1... - ");
 	TestAssert(array_pop(&str1, &popped));
-	TestPrintPrefixed("", "Popped '%c'\n", popped);
+	TestPrintPrefixed("", "Popped '%c'.\n", popped);
 
 	TestAssertMessage(popped == stored_last_char, "Popped array item is different from the expected one");
 
@@ -284,7 +335,7 @@ void test_array() {
 	TestPrint("Last item of str1: '%c'\n", stored_last_char);
 	TestPrint("Popping last item from str1... - ");
 	TestAssert(array_pop(&str1, &popped));
-	TestPrintPrefixed("", "Popped '%c'\n", popped);
+	TestPrintPrefixed("", "Popped '%c'.\n", popped);
 
 	TestAssertMessage(popped == stored_last_char, "Popped array item is different from the expected one");
 
