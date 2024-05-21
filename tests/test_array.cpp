@@ -1,19 +1,13 @@
-// #define QLIGHT_DEBUG
+﻿// #define QLIGHT_DEBUG
 
 #include "tests_common.h"
 
 #include "../src/array.h"
 
-u32 QL_max2(u32 a, u32 b); // from math.h
-
-const char *bool_to_string(bool value) {
-	if (value)  return "true";
-	return "false";
-}
-
 void test_array() {
 
 	TestPrintPrefixed("", "\n  --- Array Initialization: array_new() ---\n\n");
+
 
 	Allocator *str1_allocator = sys_allocator;
 
@@ -350,68 +344,68 @@ void test_array() {
 	bool contains = false;
 
 	contains = array_contains(&str1, '\n');
-	TestPrint("str1 contains '%s': %s (expected: %s)\n", "\\n", bool_to_string(contains), bool_to_string(false));
+	TestPrint("str1 contains '%s': %s (expected: %s)\n", "\\n", QL_bool_to_string(contains), QL_bool_to_string(false));
 	TestAssert(!contains);
 
 	contains = array_contains(&str1, ' ');
-	TestPrint("str1 contains '%c': %s (expected: %s)\n", ' ', bool_to_string(contains), bool_to_string(true));
+	TestPrint("str1 contains '%c': %s (expected: %s)\n", ' ', QL_bool_to_string(contains), QL_bool_to_string(true));
 	TestAssert(contains);
 
 	contains = array_contains(&str1, 'H');
-	TestPrint("str1 contains '%c': %s (expected: %s)\n", 'H', bool_to_string(contains), bool_to_string(true));
+	TestPrint("str1 contains '%c': %s (expected: %s)\n", 'H', QL_bool_to_string(contains), QL_bool_to_string(true));
 	TestAssert(contains);
 
 	contains = array_contains(&str1, 'w');
-	TestPrint("str1 contains '%c': %s (expected: %s)\n", 'w', bool_to_string(contains), bool_to_string(true));
+	TestPrint("str1 contains '%c': %s (expected: %s)\n", 'w', QL_bool_to_string(contains), QL_bool_to_string(true));
 	TestAssert(contains);
 
 	contains = array_contains(&str1, '!');
-	TestPrint("str1 contains '%c': %s (expected: %s)\n", '!', bool_to_string(contains), bool_to_string(false));
+	TestPrint("str1 contains '%c': %s (expected: %s)\n", '!', QL_bool_to_string(contains), QL_bool_to_string(false));
 	TestAssert(!contains);
 
 	contains = array_contains(&str1, 'h');
-	TestPrint("str1 contains '%c': %s (expected: %s)\n", 'h', bool_to_string(contains), bool_to_string(false));
+	TestPrint("str1 contains '%c': %s (expected: %s)\n", 'h', QL_bool_to_string(contains), QL_bool_to_string(false));
 	TestAssert(!contains);
 
 	contains = array_contains(&str1, 'W');
-	TestPrint("str1 contains '%c': %s (expected: %s)\n\n", 'W', bool_to_string(contains), bool_to_string(false));
+	TestPrint("str1 contains '%c': %s (expected: %s)\n\n", 'W', QL_bool_to_string(contains), QL_bool_to_string(false));
 	TestAssert(!contains);
 
 	char *found;
 
 	found = NULL;
 	found = array_find(&str1, '\n');
-	TestPrint("Found '%s' in str1: %s (expected: %s)\n", "\\n", bool_to_string(found), bool_to_string(false));
+	TestPrint("Found '%s' in str1: %s (expected: %s)\n", "\\n", QL_bool_to_string(found), QL_bool_to_string(false));
 	TestAssert(!found);
 
 	found = NULL;
 	found = array_find(&str1, ' ');
-	TestPrint("Found '%c' in str1: %s (expected: %s)\n", ' ', bool_to_string(found), bool_to_string(true));
+	TestPrint("Found '%c' in str1: %s (expected: %s)\n", ' ', QL_bool_to_string(found), QL_bool_to_string(true));
 	TestAssert(found);
 
 	found = NULL;
 	found = array_find(&str1, 'H');
-	TestPrint("Found '%c' in str1: %s (expected: %s)\n", 'H', bool_to_string(found), bool_to_string(true));
+	TestPrint("Found '%c' in str1: %s (expected: %s)\n", 'H', QL_bool_to_string(found), QL_bool_to_string(true));
 	TestAssert(found);
 
 	found = NULL;
 	found = array_find(&str1, 'w');
-	TestPrint("Found '%c' in str1: %s (expected: %s)\n", 'w', bool_to_string(found), bool_to_string(true));
+	TestPrint("Found '%c' in str1: %s (expected: %s)\n", 'w', QL_bool_to_string(found), QL_bool_to_string(true));
 	TestAssert(found);
 
 	found = (char *) 1; // To make sure array_find() returns NULL when item is not found.
 	found = array_find(&str1, '!');
-	TestPrint("Found '%c' in str1: %s (expected: %s)\n", '!', bool_to_string(found), bool_to_string(false));
+	TestPrint("Found '%c' in str1: %s (expected: %s)\n", '!', QL_bool_to_string(found), QL_bool_to_string(false));
 	TestAssert(!found);
 
 	found = (char *) 1;
 	found = array_find(&str1, 'h');
-	TestPrint("Found '%c' in str1: %s (expected: %s)\n", 'h', bool_to_string(found), bool_to_string(false));
+	TestPrint("Found '%c' in str1: %s (expected: %s)\n", 'h', QL_bool_to_string(found), QL_bool_to_string(false));
 	TestAssert(!found);
 
 	found = (char *) 1;
 	found = array_find(&str1, 'W');
-	TestPrint("Found '%c' in str1: %s (expected: %s)\n\n", 'W', bool_to_string(found), bool_to_string(false));
+	TestPrint("Found '%c' in str1: %s (expected: %s)\n\n", 'W', QL_bool_to_string(found), QL_bool_to_string(false));
 	TestAssert(!found);
 
 
@@ -471,14 +465,14 @@ void test_array() {
 	TestPrint("str3.data: \"" StringViewFormat "\" (expected: \"%s\")\n", StringViewArgument(get_array_view(&str3)), c_str_hello_world);
 
 	{
-	const u32 source_offset = 6;
-	const u32 count = 5;
-	// Copy "world" part out of "Hello world!" from str3 to str1.
-	TestAssert(array_add_from_array(&str1, &str3, source_offset, count) == count);
-	TestPrint("str1.data: \"" StringViewFormat "\" (expected: \"%s\")\n", StringViewArgument(get_array_view(&str1)), "Hello world");
+		const u32 source_offset = 6;
+		const u32 count = 5;
+		// Copy "world" part out of "Hello world!" from str3 to str1.
+		TestAssert(array_add_from_array(&str1, &str3, source_offset, count) == count);
+		TestPrint("str1.data: \"" StringViewFormat "\" (expected: \"%s\")\n", StringViewArgument(get_array_view(&str1)), "Hello world");
 
-	TestPrintPrefixed("", "\n  --- Array Deallocation: array_free() ---\n\n");
+		TestPrintPrefixed("", "\n  --- Array Deallocation: array_free() ---\n\n");
 
-	TestAssertMessage(array_free(&str1), "Failed to free array");
+		TestAssertMessage(array_free(&str1), "Failed to free array");
 	}
 }

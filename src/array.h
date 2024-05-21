@@ -1,10 +1,9 @@
 #ifndef QLIGHT_ARRAY_H
 #define QLIGHT_ARRAY_H
 
-#include "types.h"
-#include "allocator.h"
+#include "common.h"
 
-#define ARRAY_RESIZE_MIN_CAPACITY 64
+#define ARRAY_RESIZE_MIN_CAPACITY 64u
 
 #define StringViewFormat "%.*s"
 #define StringViewArgument(array_view) array_view.size, array_view.data
@@ -61,12 +60,6 @@ ArrayView<T> get_array_view(Array<T> *array, u32 offset = 0, u32 count = 0) {
 	return view;
 }
 
-#if defined(QLIGHT_MATH_H)
-u32 QL_max2(u32 a, u32 b); // from math.h
-#else
-static u32 QL_max2(u32 a, u32 b) { return (a > b) ? a : b; }
-#endif
-
 template <typename T>
 u32 array_resize(Array<T> *array, u32 new_capacity) {
 	if (new_capacity <= array->size) {
@@ -93,13 +86,14 @@ u32 array_resize(Array<T> *array, u32 new_capacity) {
 template <typename T>
 u32 array_add(Array<T> *array, T item) {
     if (array->size + 1 > array->capacity) {
-    	array_resize(array, array->size * 2);
+    	array_resize(array, array->capacity * 2);
     }
 
     array->data[array->size] = item;
-    const u32 current_idx = array->size;
+    const u32 current_index = array->size;
     array->size++;
-    return array->size - 1;
+
+    return current_index;
 }
 
 template <typename T>

@@ -109,10 +109,12 @@
     <ClCompile Include="libs\stb\stb_image.cpp" />
     <ClCompile Include="libs\tracy\TracyClient.cpp" />
     <ClCompile Include="src\allocator.cpp" />
+    <ClCompile Include="src\common.cpp" />
     <ClCompile Include="src\math.cpp" />
     <ClCompile Include="src\platform_windows.cpp" />
     <ClCompile Include="src\qlight.cpp" />
     <ClCompile Include="src\render_vk.cpp" />
+    <ClCompile Include="src\string.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\imgui\imconfig.h" />
@@ -127,10 +129,12 @@
     <ClInclude Include="libs\tracy\tracy\Tracy.hpp" />
     <ClInclude Include="src\allocator.h" />
     <ClInclude Include="src\array.h" />
+    <ClInclude Include="src\common.h" />
     <ClInclude Include="src\math.h" />
     <ClInclude Include="src\platform.h" />
     <ClInclude Include="src\qlight.h" />
     <ClInclude Include="src\render_vk.h" />
+    <ClInclude Include="src\string.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

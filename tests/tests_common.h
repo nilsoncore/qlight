@@ -5,6 +5,7 @@
 #include <string.h>
 
 #include "../src/platform.h"
+#include "../src/common.h"
 
 /*
 	Treat warning as error.
@@ -47,5 +48,6 @@
 
 void test_allocator();
 void test_array();
+void test_string();
 
 #endif /* QLIGHT_TESTS_COMMON_H */

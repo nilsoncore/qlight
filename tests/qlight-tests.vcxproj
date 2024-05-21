@@ -160,19 +160,24 @@
   <ItemGroup>
     <ClInclude Include="..\src\allocator.h" />
     <ClInclude Include="..\src\array.h" />
+    <ClInclude Include="..\src\common.h" />
     <ClInclude Include="..\src\math.h" />
     <ClInclude Include="..\src\platform.h" />
     <ClInclude Include="..\src\qlight.h" />
+    <ClInclude Include="..\src\string.h" />
     <ClInclude Include="..\src\types.h" />
     <ClInclude Include="tests_common.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\src\allocator.cpp" />
+    <ClCompile Include="..\src\common.cpp" />
     <ClCompile Include="..\src\math.cpp" />
     <ClCompile Include="..\src\platform_windows.cpp" />
+    <ClCompile Include="..\src\string.cpp" />
     <ClCompile Include="qlight_tests.cpp" />
     <ClCompile Include="test_allocator.cpp" />
     <ClCompile Include="test_array.cpp" />
+    <ClCompile Include="test_string.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

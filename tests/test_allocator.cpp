@@ -1,15 +1,8 @@
-#include "tests_common.h"
+﻿#include "tests_common.h"
 
 #include "../src/allocator.h"
 
-template <typename T>
-void T_test(T value) {
-	TestPrint("T: %s\n", get_type_name<T>());
-}
-
 void test_allocator() {
-	int8_t T_test_value = 'Q';
-	T_test(T_test_value);
 
 	char *buffer = Allocate(sys_allocator, 16, char);
 	TestAssertMessage(buffer != NULL, "Failed to heap allocate buffer memory.");
@@ -31,7 +24,7 @@ void test_allocator() {
 	TestAssertMessage(buffer1 != NULL, "Failed to linear allocate buffer memory.");
 
 	const char *msg1 = "Hello, world!";
-	memcpy(buffer1, msg1, strlen(msg1)+1);
+	memcpy(buffer1, msg1, strlen(msg1) + 1);
 	TestAssertMessage(strcmp(buffer1, msg1) == 0, "Failed to copy string into linear allocated buffer memory.");
 
 	TestPrint("1 - buffer1 pointer: 0x%p\n", buffer1);
@@ -41,7 +34,7 @@ void test_allocator() {
 	TestAssertMessage(buffer2 != NULL, "Failed to linear allocate buffer memory.");
 
 	const char *msg2 = "Goodbye, sadness!";
-	memcpy(buffer2, msg2, strlen(msg2)+1);
+	memcpy(buffer2, msg2, strlen(msg2) + 1);
 	TestAssertMessage(strcmp(buffer2, msg2) == 0, "Failed to copy string into linear allocated buffer memory.");
 
 	TestPrint("2 - buffer2 pointer: 0x%p\n", buffer2);
@@ -52,7 +45,7 @@ void test_allocator() {
 	TestAssertMessage(buffer1 != NULL, "Failed to linear reallocate buffer memory.");
 
 	const char *msg3 = "What's up, people!";
-	memcpy(buffer1, msg3, strlen(msg3)+1);
+	memcpy(buffer1, msg3, strlen(msg3) + 1);
 	TestAssertMessage(strcmp(buffer1, msg3) == 0, "Failed to copy string into linear reallocated buffer memory.");
 
 	TestPrint("3 - buffer1 pointer: 0x%p\n", buffer1);
